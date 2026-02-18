@@ -1406,6 +1406,177 @@ body::before {
 .fade-in:nth-child(4) { transition-delay: 0.2s; }
 .fade-in:nth-child(5) { transition-delay: 0.25s; }
 
+/* ── MBA PAGE — ALTERNATING PHOTO-CONTENT ROWS ── */
+
+.mba-page-wrap {
+  padding: 0 2rem 3rem;
+}
+
+/* Each row: photo on one side, content on the other, with photo as subtle bg watermark */
+.mba-row {
+  position: relative;
+  overflow: hidden;
+  max-width: 960px;
+  margin: 0 auto 1.5rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+  background: var(--bg-card);
+}
+
+/* Subtle watermark — the same photo used in the row, as a bg layer */
+.mba-row-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.04;
+  filter: saturate(0) blur(1px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.mba-row-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(ellipse at center, transparent 20%, var(--bg-card) 80%);
+  z-index: 1;
+}
+
+/* Inner grid — content + photo side by side */
+.mba-row-inner {
+  position: relative;
+  z-index: 2;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0;
+  align-items: stretch;
+}
+
+/* Content side */
+.mba-row-content {
+  padding: 2.2rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.mba-content-block {
+  margin-bottom: 1.5rem;
+}
+
+.mba-content-block:last-child {
+  margin-bottom: 0;
+}
+
+/* Photo side */
+.mba-row-photo {
+  overflow: hidden;
+  position: relative;
+  min-height: 380px;
+}
+
+.mba-row-photo img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center 80%;  /* Default: focus on lower portion of portrait photos */
+}
+
+/* REVERSE layout — photo LEFT, content RIGHT */
+.mba-row-reverse .mba-row-inner {
+  direction: rtl;  /* Flip grid order */
+}
+
+.mba-row-reverse .mba-row-inner > * {
+  direction: ltr;  /* Reset text direction inside children */
+}
+
+/* Photo-specific object-position overrides */
+/* Graduation photo — Nikita is at the bottom of the frame */
+.mba-photo-graduation img {
+  object-position: center 85%;
+}
+
+/* Degree photo — scroll & certificate in lower half */
+.mba-photo-degree img {
+  object-position: center 70%;
+}
+
+/* McEwan Hall dome — center on the dome ceiling */
+.mba-photo-dome img {
+  object-position: center 30%;
+}
+
+/* Consultancy project items stacked inside a row */
+.mba-project-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  margin-top: 1rem;
+}
+
+.mba-project-item {
+  padding: 1.1rem 1.3rem;
+  border-radius: 8px;
+  border: 1px solid var(--border-faint);
+  background: rgba(250, 249, 247, 0.7);
+  transition: all var(--transition);
+}
+
+.mba-project-item:hover {
+  border-color: var(--border-light);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  transform: translateY(-1px);
+}
+
+/* Video wrapper inside a row */
+.mba-video-wrap {
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid var(--border-faint);
+}
+
+.mba-video-wrap video {
+  display: block;
+  border-radius: 8px;
+}
+
+/* Full-width cohort group photo (landscape — not side-by-side) */
+.mba-cohort-hero {
+  max-width: 960px;
+  margin: 0 auto 1.5rem;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-light);
+  background: var(--bg-card);
+}
+
+.mba-cohort-img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.mba-hero-caption {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.62rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--accent-warm);
+  text-align: center;
+  padding: 0.7rem 1rem;
+  background: var(--bg-card);
+  font-weight: 500;
+}
+
+/* Gold accents for MBA page small text */
+[data-page="mba"] .page-subtitle { color: var(--accent-warm); }
+[data-page="mba"] .section-subheading { color: var(--accent-warm); }
+.mba-project-item .ai-project-label { color: var(--accent-warm); }
+
 /* ═══════════════════════════════════════════════════
    RESPONSIVE — MOBILE (≤ 768px)
    ═══════════════════════════════════════════════════ */
@@ -1539,6 +1710,30 @@ body::before {
 
   /* Placeholder */
   .placeholder-content { padding: 3rem 1.5rem; }
+
+  /* MBA alternating rows — stack on mobile */
+  .mba-page-wrap {
+    padding: 0 1.5rem 2rem;
+  }
+  .mba-row-inner {
+    grid-template-columns: 1fr;
+  }
+  .mba-row-reverse .mba-row-inner {
+    direction: ltr;
+  }
+  .mba-row-photo {
+    min-height: 280px;
+    max-height: 360px;
+  }
+  .mba-row-content {
+    padding: 1.5rem;
+  }
+  .mba-row {
+    margin: 0 auto 1rem;
+  }
+  .mba-cohort-hero {
+    margin: 0 auto 1rem;
+  }
 }
 
 /* ── PRINT STYLES ── */

@@ -40,59 +40,91 @@
   <p class="page-subtitle">The University of Edinburgh &middot; 2021&ndash;2022</p>
 </div>
 
-<!-- ════════ CONTENT ════════ -->
-<section class="content-section">
+<!-- ════════ ALTERNATING PHOTO-CONTENT SECTIONS ════════ -->
+<div class="mba-page-wrap">
 
-  <div class="chart-box fade-in" style="padding: 0; overflow: hidden;">
-    <video width="100%" controls preload="metadata" style="display: block; border-radius: var(--radius-md);">
-      <source src="img/mba-video.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
-  </div>
-
-  <!-- Specialisation -->
-  <div class="chart-box fade-in" style="margin-top: 1.5rem;">
-    <div class="chart-title">Specialisation</div>
-    <div class="footprint-countries">
-      <span class="country-chip">Strategy</span>
-      <span class="country-chip">Operational Improvement</span>
-      <span class="country-chip">Finance</span>
-      <span class="country-chip">Marketing</span>
+<!-- ROW 1 — Content LEFT | Graduation Photo RIGHT -->
+<section class="mba-row fade-in">
+  <div class="mba-row-bg" style="background-image: url('img/mba-graduation.jpeg');" aria-hidden="true"></div>
+  <div class="mba-row-inner">
+    <div class="mba-row-content">
+      <div class="mba-content-block">
+        <div class="chart-title">Specialisation</div>
+        <div class="footprint-countries">
+          <span class="country-chip">Strategy</span>
+          <span class="country-chip">Operational Improvement</span>
+          <span class="country-chip">Finance</span>
+          <span class="country-chip">Marketing</span>
+        </div>
+      </div>
+      <div class="mba-content-block">
+        <div class="subsection-heading">Dissertation</div>
+        <div class="subsection-subheading">Jumpstarting a Start-up: Strategic Decision-Making &amp; Risk Management in New Ventures</div>
+        <p style="font-size: 0.78rem; color: var(--text-muted); line-height: 1.65;">Explored how founders navigate strategic decisions and manage risk in the early stages of building a venture &mdash; drawing on frameworks from strategy, finance, and operational management.</p>
+      </div>
+    </div>
+    <div class="mba-row-photo mba-photo-graduation">
+      <img src="img/mba-graduation.jpeg" alt="Nikita Rai at MBA graduation ceremony, University of Edinburgh">
     </div>
   </div>
-
-  <!-- Dissertation -->
-  <div class="chart-box fade-in">
-    <div class="subsection-heading">Dissertation</div>
-    <div class="subsection-subheading">Jumpstarting a Start-up: Strategic Decision-Making &amp; Risk Management in New Ventures</div>
-    <p style="font-size: 0.78rem; color: var(--text-muted); line-height: 1.65;">Explored how founders navigate strategic decisions and manage risk in the early stages of building a venture &mdash; drawing on frameworks from strategy, finance, and operational management.</p>
-  </div>
-
-  <!-- Consultancy Projects -->
-  <div class="fade-in">
-    <h2 class="section-heading">Consultancy Projects</h2>
-    <p class="section-subheading">Real-world projects completed during the MBA programme, working with organisations across industries.</p>
-  </div>
-
-  <div class="ai-projects">
-    <div class="ai-project-card fade-in">
-      <div class="ai-project-label">Marketing Campaign</div>
-      <div class="ai-project-title">Mac-Talla Whisky</div>
-      <div class="ai-project-desc">Developed a marketing campaign strategy for Mac-Talla, an Islay single malt Scotch whisky brand &mdash; covering market positioning, target audience analysis, and campaign execution recommendations.</div>
-    </div>
-    <div class="ai-project-card fade-in">
-      <div class="ai-project-label">Research Report</div>
-      <div class="ai-project-title">Yorkshire Building Society</div>
-      <div class="ai-project-desc">Conducted research on the future of bank branches for Yorkshire Building Society &mdash; analysing shifting customer behaviours, digital transformation trends, and strategic options for the branch network.</div>
-    </div>
-    <div class="ai-project-card fade-in">
-      <div class="ai-project-label">Youth Organisation</div>
-      <div class="ai-project-title">The GK Experience</div>
-      <div class="ai-project-desc">Worked with The GK Experience, a youth organisation, on strategic planning and operational recommendations to support their growth and community engagement objectives.</div>
-    </div>
-  </div>
-
 </section>
+
+<!-- ROW 2 — Degree Photo LEFT | Consultancy Projects RIGHT -->
+<section class="mba-row mba-row-reverse fade-in">
+  <div class="mba-row-bg" style="background-image: url('img/mba-degree.jpeg');" aria-hidden="true"></div>
+  <div class="mba-row-inner">
+    <div class="mba-row-content">
+      <h2 class="section-heading" style="margin-top: 0;">Consultancy Projects</h2>
+      <p class="section-subheading">Real-world projects completed during the MBA programme, working with organisations across industries.</p>
+      <div class="mba-project-stack">
+        <div class="mba-project-item">
+          <div class="ai-project-label">Marketing Campaign</div>
+          <div class="ai-project-title">Mac-Talla Whisky</div>
+          <div class="ai-project-desc">Developed a marketing campaign strategy for Mac-Talla, an Islay single malt Scotch whisky brand &mdash; covering market positioning, target audience analysis, and campaign execution recommendations.</div>
+        </div>
+        <div class="mba-project-item">
+          <div class="ai-project-label">Research Report</div>
+          <div class="ai-project-title">Yorkshire Building Society</div>
+          <div class="ai-project-desc">Conducted research on the future of bank branches for Yorkshire Building Society &mdash; analysing shifting customer behaviours, digital transformation trends, and strategic options for the branch network.</div>
+        </div>
+        <div class="mba-project-item">
+          <div class="ai-project-label">Youth Organisation</div>
+          <div class="ai-project-title">The GK Experience</div>
+          <div class="ai-project-desc">Worked with The GK Experience, a youth organisation, on strategic planning and operational recommendations to support their growth and community engagement objectives.</div>
+        </div>
+      </div>
+    </div>
+    <div class="mba-row-photo mba-photo-degree">
+      <img src="img/mba-degree.jpeg" alt="University of Edinburgh MBA degree scroll and certificate — Nikita Rai">
+    </div>
+  </div>
+</section>
+
+<!-- ROW 3 — Full-width Cohort Group Photo -->
+<section class="mba-cohort-hero fade-in">
+  <img src="img/mba-cohort.jpeg" alt="MBA Class of 2022 group photo at graduation, University of Edinburgh" class="mba-cohort-img">
+  <div class="mba-hero-caption">MBA Class of 2022 &middot; University of Edinburgh Business School</div>
+</section>
+
+<!-- ROW 4 — Video LEFT | McEwan Hall Dome RIGHT -->
+<section class="mba-row fade-in">
+  <div class="mba-row-bg" style="background-image: url('img/mba-mcewan-hall.jpeg');" aria-hidden="true"></div>
+  <div class="mba-row-inner">
+    <div class="mba-row-content">
+      <div class="mba-video-wrap">
+        <video width="100%" controls preload="metadata">
+          <source src="img/mba-video.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+    <div class="mba-row-photo mba-photo-dome">
+      <img src="img/mba-mcewan-hall.jpeg" alt="McEwan Hall painted dome ceiling — University of Edinburgh graduation venue">
+    </div>
+  </div>
+</section>
+
+</div><!-- /.mba-page-wrap -->
 
 <!-- ════════ FOOTER ════════ -->
 <footer class="footer">
