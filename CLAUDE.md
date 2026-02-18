@@ -1,71 +1,128 @@
 # Nikita Rai — Professional Portfolio Website
 
 ## About the Project Owner
-Nikita is **not a technical person** — she has no coding or web development background. She is building and maintaining this website entirely using AI tools. Ask clarifying questions in plain language when in doubt. Never assume technical knowledge. Due to  this, ALWAYS update CLAUDE.md with new information as the project updates. Always ask her questions where required.
+Nikita is **not a technical person** — she has no coding or web development background. She is building and maintaining this website entirely using AI tools. Ask clarifying questions in plain language when in doubt. Never assume technical knowledge. Due to this, ALWAYS update CLAUDE.md with new information as the project updates. Always ask her questions where required.
 
 Nikita is a Senior Auditor & Finance professional (CA + MBA from University of Edinburgh) with 12+ years of experience. Her role at Intel was made redundant in **Dec 2025** and she is currently job hunting, targeting **Internal Audit, Risk & Controls, and Compliance** roles.
+
+## GitHub & Deployment
+- **Repo**: https://github.com/nikitarai1203/portfolio-website
+- **Live site**: https://nikitarai1203.github.io/portfolio-website/
+- **Custom domain**: https://nikitarai.com (CNAME file in `source/CNAME`)
+- **Deployment**: GitHub Actions (`.github/workflows/deploy.yml`) — auto-deploys the `source/` folder to GitHub Pages on every push to `main`
+- **Git config** (repo-local): Nikita Rai / nikita.rai1203@gmail.com
+- **IMPORTANT: Never push (`git push`) without asking Nikita first.** Commit locally as needed, but always ask before publishing/pushing to GitHub.
 
 ## Project Structure
 
 ```
 Website- Nikita/
-├── CLAUDE.md              ← This file
-├── Linkedin profile.pdf   ← LinkedIn export (reference for bio/experience details)
+├── CLAUDE.md                ← This file
+├── .gitignore               ← Excludes OS files, .pptx, etc.
+├── .github/
+│   └── workflows/
+│       └── deploy.yml       ← GitHub Pages deployment workflow
+├── Linkedin profile.pdf     ← LinkedIn export (reference for bio/experience details)
 ├── source/
-│   └── index.html         ← THE ENTIRE WEBSITE (single file, embedded CSS + JS)
+│   ├── index.html           ← Landing page (bento grid overview)
+│   ├── career.html          ← Professional Journey (7-card timeline)
+│   ├── intel.html           ← Intel UK deep-dive (recoveries, projects, countries & audits, footprint)
+│   ├── startups.html        ← Startups & Early Career (Clover, Quintype, Audit)
+│   ├── ai.html              ← AI & Innovation (3 project cards)
+│   ├── mba.html             ← MBA at Edinburgh (placeholder)
+│   ├── blog.html            ← Blog (placeholder)
+│   ├── css/
+│   │   └── styles.css       ← Shared stylesheet (~1490 lines)
+│   ├── js/
+│   │   └── main.js          ← Shared JavaScript (~93 lines)
+│   ├── img/
+│   │   ├── banner.jpg            ← Edinburgh Castle banner (57KB)
+│   │   ├── intel.jpg             ← Intel UK Swindon campus (54KB, 600×400)
+│   │   ├── intel-personal.jpeg   ← Intel UK personal photo (49KB, 600×337)
+│   │   ├── mba-graduation.jpeg   ← Nikita's Edinburgh MBA graduation (161KB, 600×1066)
+│   │   ├── mba-video.mp4         ← Edinburgh university video (4MB, for mba.html)
+│   │   ├── clover-deeprooted.png ← Deep Rooted / Clover brand image (314KB, 600×281)
+│   │   ├── quintype-office.png   ← Quintype Technologies office (257KB, 600×605)
+│   │   └── icai-logo.png         ← ICAI logo, used for CA cards (121KB, 461×338)
+│   └── CNAME                ← Custom domain config
 └── .claude/
     └── settings.local.json
 ```
 
-**Everything lives in `source/index.html`** — all HTML, CSS (~1000 lines), and JavaScript are embedded in this one file. There is no build process, no package manager, no framework.
-
-This is for the MVP. In future, we must optimise this.
+**Multi-page architecture** — 7 HTML pages sharing one CSS file and one JS file. No build process, no package manager, no framework. All pages live in `source/`.
 
 Always consider SEO as this is a portfolio and must be well ranked on Google etc.
 
+## Site Map (7 Pages)
+
+| Page | File | Content |
+|---|---|---|
+| Home | `index.html` | Banner, contact header, stats bar, bento grid metrics/charts, teaser cards to other pages |
+| Career | `career.html` | 7-card vertical timeline (full professional journey) |
+| Intel UK | `intel.html` | Recovery bar chart, projects breakdown, global footprint |
+| Startups | `startups.html` | Mini metrics (3 tiles) + Clover/Quintype/Audit breakdowns |
+| AI | `ai.html` | 3 AI project cards (sanctions, automation, this website) |
+| MBA | `mba.html` | Placeholder — content to be added later |
+| Blog | `blog.html` | Placeholder — content to be added later |
+
+## Navigation
+
+**Shared sticky nav** on all pages:
+```
+Nikita Rai    Home  Career  Intel  Startups  AI  MBA  Blog
+```
+- On home page: hidden by default, slides in after scrolling past banner
+- On inner pages: visible immediately (no banner)
+- Current page link highlighted with accent color + underline
+- Mobile: hamburger menu collapses nav into dropdown
+
+Each page has `data-page` attribute on `<body>` (e.g., `data-page="home"`, `data-page="career"`).
+
 ## External Dependencies
-- **Google Fonts**: Cormorant Garamond (serif, headings) + Outfit (sans-serif, body)
-- **Leaflet.js v1.9.4**: Interactive map for Global Audit Footprint section
-- **No other dependencies**
+- **Google Fonts**: Lora (serif, body text & numbers) + DM Sans (sans-serif, headings & UI)
+- **No other dependencies** (Leaflet.js map was removed)
 
 ## Root Font Size
-`html { font-size: 20px; }` — All sizing uses `rem` units. Changing this one value scales the entire site proportionally.
+`html { font-size: 18px; }` — All sizing uses `rem` units. Changing this one value scales the entire site proportionally.
 
-## CSS Theme Variables
+## CSS Design Tokens
 ```css
 :root {
-  --bg: #f8f6f3;              /* Warm off-white background */
-  --bg-card: #ffffff;          /* Card background */
-  --text: #2e3038;             /* Primary text (dark slate) */
-  --text-muted: #6b6d77;       /* Secondary text */
-  --accent: #5c6a82;           /* Primary accent (slate blue) */
-  --accent-warm: #8a7060;      /* Warm accent (taupe) */
-  --accent-subtle: rgba(92, 106, 130, 0.07);
-  --border: #e4e1dc;
-  --border-light: #eeebe7;
-  --line-color: #d4d0ca;
+  --bg:             #f0eeea;       /* Warm grey background */
+  --bg-warm:        #e8e5df;
+  --bg-card:        #faf9f7;
+  --text:           #1c2a3a;       /* Deep blue-grey text */
+  --text-secondary: #3d5068;       /* Steel blue */
+  --text-muted:     #6b7a8d;
+  --text-faint:     #9ba5b0;
+  --accent:         #2c4a6e;       /* Steel blue */
+  --accent-light:   #3d6090;
+  --accent-warm:    #b8924a;       /* Burnished gold */
+  --gold:           #b8924a;       /* Burnished gold */
+  --border:         #d5d0c8;
+  --border-light:   #e2ded7;
+  --border-faint:   #ebe8e2;
 }
 ```
-**Note:** Font sizes are NOT in CSS variables — they are hardcoded per class.
 
-## Tab Structure (4 tabs)
+## Page Layouts
 
-| Tab Button Label | data-tab ID | Panel ID | Nav Link Label | Content |
-|---|---|---|---|---|
-| Overview | `overview` | `tab-overview` | Overview | Impact dashboard, charts, leadership, global map |
-| Professional Journey | `journey` | `tab-journey` | Journey | Timeline with 7 career cards |
-| Startups & Early Career | `startups` | `tab-startups` | Startups | Mini metrics + breakdown for Clover/Quintype/Audit |
-| AI & Innovation | `ai` | `tab-ai` | AI | 3 AI project cards |
-
-Tab switching is handled by `switchTab(tabId)` function. Both `.tab-btn` elements and `.nav-link[data-tab]` elements trigger it.
-
-## Page Layout (top to bottom)
-1. **Banner** — hero image (300px desktop, 180px mobile)
+### `index.html` — Landing Page
+1. **Banner** — Edinburgh Castle (320px desktop, 200px mobile, 2px accent line separator)
 2. **Contact Header** — Name + tagline + LinkedIn + "Get in Touch" CTA dropdown
 3. **Stats Bar** — 12+ Years | $7M+ Recoveries | $2M–$372M Project Value
-4. **Tab Navigation** — 4 buttons
-5. **Active Tab Panel** (Overview shown by default)
+4. **Bento Grid Section** — "Impact at a Glance"
+   - Row 1: 4 metric tiles ($12.54M, 12 audits, 10+ countries, 21 trained)
+   - Row 2: Recovery bar chart + Global footprint (2-col)
+   - Row 3: Team leadership bars + AI teaser link (2-col)
+5. **Teaser Section** — "Explore" — 5 cards linking to Career, Intel, Startups, MBA, Blog
 6. **Footer** — Email + LinkedIn + "Designed & built with AI tools"
+
+### Inner Pages (career, intel, startups, ai, mba, blog)
+1. **Sticky Nav** (visible immediately)
+2. **Page Header** — Title + subtitle
+3. **Content Section** — page-specific content
+4. **Footer** — same as home
 
 ## Header / Tagline
 ```
@@ -74,11 +131,11 @@ Internal Audit · Risk & Controls · Compliance | MBA (Edinburgh) · CA · 12+ Y
 Bridging compliance, finance, and AI — from startup chaos to enterprise scale.
 ```
 
-## Timeline Cards (Professional Journey tab)
+## Timeline Cards (career.html)
 
 | # | Years | Company | Title | Role | Tags |
 |---|---|---|---|---|---|
-| 1 | 2022–2025 | Intel Corporation (UK) Ltd | Senior Auditor — Risk & Customer Audit | EMEA & Asia | SOX, ERM, Fraud Prevention, GRC, EMEA & Asia |
+| 1 | 2022–2026 | Intel Corporation (UK) Ltd | Senior Auditor — Risk & Customer Audit | EMEA & Asia | SOX, ERM, Fraud Prevention, GRC, EMEA & Asia |
 | 2 | 2021–2022 | The University of Edinburgh | MBA | Strategy · Operational Improvement · Finance | MBA, Strategy, Operations, Finance |
 | 3 | 2020–2021 | Clover Ventures Pvt Ltd · Bangalore, India | Finance Manager | Agritech Retail Startup | Team Lead (13), SOX Controls, Fraud Detection & Recovery, Series B |
 | 4 | 2017–2020 | Quintype Technologies · New York / India | Finance Manager | Media-Tech SaaS | SaaS Finance, US GAAP, IFRS, Cost Optimisation |
@@ -86,9 +143,9 @@ Bridging compliance, finance, and AI — from startup chaos to enterprise scale.
 | 6 | 2011–2015 | Multiple Mid-Sized CA Firms · India | Audit Team Lead & Tax Consultant | Audit & Tax Practice | Statutory Audit, Tax Consulting, Bank Audit, Stock Audit, Training Junior Auditors, Internal Audit |
 | 7 | 2008–2012 | Institute of Chartered Accountants of India | Chartered Accountant (CA) | Professional Qualification · 3.5 Years Articleship (Internship) | CA, ICAI, Audit, Taxation |
 
-**Design note:** Timeline cards have NO paragraph descriptions — only company, title, role, award (Intel only), and tags. This was a deliberate decision to keep them scannable.
+**Design note:** Timeline cards have NO paragraph descriptions — only company, title, role, award (Intel only), and tags. This was a deliberate decision to keep them scannable. Each timeline entry has an image in the left column (`.timeline-image`) that reveals on hover (desktop) or shows always (mobile). Images: Intel campus, MBA graduation, Deep Rooted brand, Quintype office, and ICAI logo (shared by Ranga Rao, CA Firms, and CA Qualification cards).
 
-## AI & Innovation Tab (3 project cards)
+## AI & Innovation (ai.html) — 3 project cards
 
 1. **Sanctions Breach Monitoring Tool** (Risk & Compliance) — AI-powered tool to detect sanctions evasion across a distributor network. Descriptions are kept **generic** — no mention of Intel, Russia, or specific products. Nikita is sensitive about not exposing company-internal details.
 
@@ -98,41 +155,70 @@ Bridging compliance, finance, and AI — from startup chaos to enterprise scale.
 
 **IMPORTANT: Nikita does not want Intel-specific internal details or sensitive geopolitical references on the website. Keep all descriptions generic when referencing work done at Intel.**
 
-## Startups & Early Career Tab
-Currently contains:
-- 3 mini metric cards (₹3.8M recovered at Quintype, 60% control gaps reduced at Clover, 25% cost reduction at Quintype)
+## Startups & Early Career (startups.html)
+- 3 mini metric cards (₹3.8M recovered at Clover, 60% control gaps reduced at Clover, 25% cost reduction at Quintype)
 - Year breakdown for Clover, Quintype, and Audit firms
 
-**Nikita plans to add more detail to this tab in a future session.**
-
 ## Key Factual Corrections Applied
-- **Quintype**: No recoveries happened here. The ₹3.8M recovery was at **Clover** (fraud detection and recovery of stolen amount). The Startups tab mini-metrics may still reference Quintype for the ₹3.8M — this needs verification and may need correction.
+- **Quintype**: No recoveries happened here. The ₹3.8M recovery was at **Clover** (fraud detection and recovery of stolen amount).
 - **Clover**: Fraud detection AND recovery of the stolen amount happened here.
-- **Intel end date**: Dec 2025 (role made redundant), NOT Jan 2026.
+- **Intel end date**: Jan 2026 (role made redundant Dec 2025, severance paid through Jan 2026). Website shows 2022–2026.
+- **NDA compliance**: NEVER use specific client/vendor names (e.g. Amazon, specific cloud providers by name) in bar chart labels, descriptions, or anywhere on the site. Nikita is under NDA. Always use generic terms like "Vendor Audit Recovery", "Rebate Overpayment", "Cloud Service Provider" etc. This applies to ALL pages.
 
 ## Key CSS Classes Reference
 
 | Component | Class | Notes |
 |---|---|---|
-| Tab buttons | `.tab-btn` | `data-tab` attribute controls switching |
-| Tab panels | `.tab-panel` | `.active` class shows/hides |
-| Nav links | `.nav-link` | Sticky nav, appears after scrolling past banner |
+| Nav container | `.site-nav` | Sticky, blur backdrop, `.visible` class shows it |
+| Nav links wrapper | `.nav-links` | Flex row on desktop, dropdown on mobile |
+| Hamburger button | `.nav-hamburger` | Hidden on desktop, visible on mobile |
+| Page header | `.page-header` | Inner pages only (no banner) |
+| Bento grid | `.bento-grid` | 4-col default, `.bento-grid-2col` for 2-col |
+| Bento tile | `.bento-tile` | White card with hover lift |
+| Metric tile | `.bento-metric` | Centered text, top accent bar on hover |
+| Teaser card | `.teaser-card` | Link cards in the "Explore" section |
+| Feature teaser | `.bento-teaser-feature` | Gradient bg, used for AI teaser |
+| Content section | `.content-section` | Wrapper for inner page content |
+| Chart box | `.chart-box` | White card for charts/breakdowns |
 | Timeline entry | `.timeline-item` | Grid: 240px left + 1fr right |
-| Year label | `.year-text` | 1.35rem, Cormorant Garamond, bold |
-| Timeline dot | `.timeline-dot` | 11px with double-ring halo effect |
+| Year label | `.year-text` | 1.3rem, Lora, bold |
+| Timeline dot | `.timeline-dot` | 10px with halo effect on `.visible` |
 | Card | `.card` | Has left accent bar on hover |
-| Section heading | `.section-heading` | Cormorant Garamond, 1.5rem |
+| Timeline image | `.timeline-image` | Hover-reveal image in timeline left column, contain fit, hidden by default on desktop |
+| Section heading | `.section-heading` | DM Sans, 1.6rem |
 | AI project cards | `.ai-project-card` | 3-column grid (1-col on mobile) |
 | Tags | `.tag` | Small pills, slate blue |
+| Placeholder | `.placeholder-content` | Centered card for MBA/Blog "coming soon" |
 
 ## Responsive Breakpoint
-Single breakpoint at `max-width: 768px` handles all mobile styling.
+Single breakpoint at `max-width: 768px` handles all mobile styling:
+- Nav collapses to hamburger menu
+- Bento grid: 4-col → 2-col, 2-col → 1-col
+- Teaser grid: 3-col → 1-col
+- Timeline: 2-col → 1-col (stacked)
+- AI projects: 3-col → 1-col
+
+## JavaScript Features
+- **Sticky nav** — appears after scrolling past banner (home only; always visible on inner pages via `class="visible"`)
+- **Hamburger menu** — toggles `.open` on nav-links and hamburger button
+- **Fade-in observer** — IntersectionObserver adds `.visible` to `.fade-in` elements
+- **Timeline animation** — slides in timeline items on scroll
+- **Chart animation** — triggers bar height/width transitions when chart enters viewport
+- **CTA dropdown** — closes when clicking outside
 
 ## Design Decisions Made
-- **Fonts**: Cormorant Garamond for headings/numbers (serif elegance), Outfit for body (clean sans-serif)
-- **Color palette**: Warm neutrals with slate blue accent — professional and trustworthy
+- **Multi-page architecture** — each page focused, room to grow, not crowded
+- **Bento grid on landing page only** — other pages use clean section layouts
+- **No banner on inner pages** — compact nav-only header keeps pages fast and focused
+- **Teaser cards on landing page** — guide visitors to explore other pages
+- **Placeholder pages for MBA and Blog** — ready to fill in later
+- **Intel gets its own page** — the recovery data, projects, and team leadership are meaty enough
+- **Shared CSS/JS** — one stylesheet, one JS file, duplicated header/footer HTML
+- **Fonts**: Lora for body text & numbers (warm readable serif), DM Sans for headings & UI (clean sans-serif)
+- **Color palette**: Warm grey background with steel blue + burnished gold accents — professional, trustworthy, and eye-catching for finance/audit hiring managers
 - **No descriptions on timeline cards** — deliberately removed for scannability
 - **Year-only dates** (no months) across all timeline entries for consistency
 - **Justified text** on AI project descriptions for clean alignment
 - **Footer note**: "Designed & built with AI tools" — subtle signal of AI fluency
 - **Location format**: "City, India" used consistently across all Indian companies
+- **Banner**: Clean 2px accent line separator (no gradient overlay, no image filters)
