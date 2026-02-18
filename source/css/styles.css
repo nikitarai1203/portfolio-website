@@ -1785,6 +1785,10 @@ body::before {
   }
 
   /* Blog */
+  [data-page="blog"] .page-header {
+    padding: 2.5rem 1.5rem 1.5rem;
+    text-align: center;
+  }
   .blog-post-card {
     padding: 1.5rem;
   }
