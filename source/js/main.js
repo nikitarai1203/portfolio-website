@@ -6,15 +6,7 @@
 (function () {
   'use strict';
 
-  /* ── Sticky Nav Visibility (home page only — has banner) ── */
-  var nav = document.getElementById('siteNav');
-  var banner = document.querySelector('.banner');
-
-  if (nav && banner) {
-    window.addEventListener('scroll', function () {
-      nav.classList.toggle('visible', window.scrollY > banner.offsetHeight);
-    }, { passive: true });
-  }
+  /* ── Nav is always visible and sticky on all pages ── */
 
   /* ── Mobile Hamburger Menu ── */
   var hamburger = document.getElementById('navHamburger');

@@ -81,20 +81,7 @@ body::before {
   pointer-events: auto;
 }
 
-/* Home page only: hide nav initially, reveal on scroll past banner */
-[data-page="home"] .site-nav {
-  opacity: 0;
-  transform: translateY(-100%);
-  pointer-events: none;
-  border-bottom-color: transparent;
-}
-
-[data-page="home"] .site-nav.visible {
-  opacity: 1;
-  transform: translateY(0);
-  pointer-events: auto;
-  border-bottom-color: var(--border-light);
-}
+/* Nav is always visible and sticky on all pages */
 
 .nav-inner {
   max-width: 960px;
