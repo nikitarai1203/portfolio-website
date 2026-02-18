@@ -1577,6 +1577,44 @@ body::before {
 [data-page="mba"] .section-subheading { color: var(--accent-warm); }
 .mba-project-item .ai-project-label { color: var(--accent-warm); }
 
+/* ── BLOG PAGE — EMBEDDED POSTS ── */
+
+.blog-post-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.blog-post-label {
+  font-size: 0.58rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-warm);
+  margin-bottom: 0.5rem;
+}
+
+.blog-post-title {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1.15rem;
+  color: var(--text);
+  margin-bottom: 1.2rem;
+}
+
+.blog-embed-wrap {
+  display: flex;
+  justify-content: center;
+}
+
+.blog-embed-wrap iframe {
+  max-width: 100%;
+  border-radius: 8px;
+}
+
 /* ═══════════════════════════════════════════════════
    RESPONSIVE — MOBILE (≤ 768px)
    ═══════════════════════════════════════════════════ */
@@ -1733,6 +1771,14 @@ body::before {
   }
   .mba-cohort-hero {
     margin: 0 auto 1rem;
+  }
+
+  /* Blog */
+  .blog-post-card {
+    padding: 1.5rem;
+  }
+  .blog-embed-wrap iframe {
+    height: 600px;
   }
 }
 
