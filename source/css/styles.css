@@ -73,15 +73,23 @@ body::before {
   background: rgba(240, 238, 234, 0.88);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid transparent;
+  border-bottom: 1px solid var(--border-light);
   padding: 0;
-  opacity: 0;
-  transform: translateY(-100%);
+  opacity: 1;
+  transform: translateY(0);
   transition: opacity 0.4s ease, transform 0.4s ease, border-color 0.4s ease;
-  pointer-events: none;
+  pointer-events: auto;
 }
 
-.site-nav.visible {
+/* Home page only: hide nav initially, reveal on scroll past banner */
+[data-page="home"] .site-nav {
+  opacity: 0;
+  transform: translateY(-100%);
+  pointer-events: none;
+  border-bottom-color: transparent;
+}
+
+[data-page="home"] .site-nav.visible {
   opacity: 1;
   transform: translateY(0);
   pointer-events: auto;
@@ -1785,10 +1793,6 @@ body::before {
   }
 
   /* Blog */
-  [data-page="blog"] .page-header {
-    padding: 2.5rem 1.5rem 1.5rem;
-    text-align: center;
-  }
   .blog-post-card {
     padding: 1.5rem;
   }
