@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Prototype — Intel Page Layout</title>
+<link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f0eeea;
+    --bg-card: #faf9f7;
+    --text: #1c2a3a;
+    --text-secondary: #3d5068;
+    --text-muted: #6b7a8d;
+    --text-faint: #9ba5b0;
+    --accent: #2c4a6e;
+    --accent-light: #3d6090;
+    --accent-warm: #b8924a;
+    --border-light: #e2ded7;
+    --border-faint: #ebe8e2;
+    --radius-md: 10px;
+    --radius-lg: 14px;
+  }
+
+  *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+  html { font-size: 18px; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Lora', Georgia, serif;
+    line-height: 1.8;
+    padding: 2rem;
+  }
+
+  .prototype-label {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent-warm);
+    font-weight: 600;
+    margin-bottom: 1rem;
+    padding: 0.4rem 0.8rem;
+    background: rgba(184, 146, 74, 0.1);
+    border-radius: 4px;
+    display: inline-block;
+  }
+
+  .section { max-width: 960px; margin: 0 auto 3rem; }
+
+  /* ── PAGE HEADER WITH SMALL IMAGE ── */
+  .page-header-with-img {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2rem;
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 3rem 2rem 2rem;
+    border-bottom: 1px solid var(--border-light);
+  }
+
+  .page-header-text h1 {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 2.4rem;
+    color: var(--text);
+    line-height: 1.1;
+  }
+
+  .page-header-text p {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    margin-top: 0.5rem;
+    font-weight: 300;
+  }
+
+  .page-header-photo {
+    flex-shrink: 0;
+    width: 200px;
+    height: 130px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    border: 1px solid var(--border-light);
+  }
+
+  .page-header-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* ── AUDIT LIFECYCLE DIAGRAM ── */
+  .audit-cycle-box {
+    background: var(--bg-card);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    padding: 2rem 2rem 3rem;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+  }
+
+  .chart-title {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    margin-bottom: 1.5rem;
+    color: var(--text);
+  }
+
+  .audit-cycle-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 520px;
+    margin: 0 auto;
+    aspect-ratio: 1;
+  }
+
+  /* Center label */
+  .cycle-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    z-index: 3;
+  }
+
+  .cycle-center-label {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 1rem;
+    color: var(--accent);
+    line-height: 1.2;
+  }
+
+  .cycle-center-sub {
+    font-size: 0.6rem;
+    color: var(--text-muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-top: 0.2rem;
+  }
+
+  /* Circular ring (SVG behind) */
+  .cycle-ring {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+  }
+
+  /* Phase nodes positioned around the circle */
+  .cycle-phase {
+    position: absolute;
+    z-index: 2;
+    text-align: center;
+    width: 200px;
+  }
+
+  .cycle-phase-num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 0.85rem;
+    color: #fff;
+    margin-bottom: 0.4rem;
+  }
+
+  .cycle-phase-title {
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 700;
+    font-size: 0.78rem;
+    color: var(--text);
+    margin-bottom: 0.25rem;
+  }
+
+  .cycle-phase-tasks {
+    font-size: 0.62rem;
+    color: var(--text-muted);
+    line-height: 1.5;
+  }
+
+  /* Phase positions — top, right, bottom, left */
+  .phase-1 { top: 0%; left: 50%; transform: translateX(-50%); }
+  .phase-2 { top: 42%; right: -6%; transform: translateY(-50%); }
+  .phase-3 { bottom: -4%; left: 50%; transform: translateX(-50%); }
+  .phase-4 { top: 42%; left: -6%; transform: translateY(-50%); }
+
+  /* Phase colors */
+  .phase-1 .cycle-phase-num { background: var(--accent); }
+  .phase-2 .cycle-phase-num { background: var(--accent-light); }
+  .phase-3 .cycle-phase-num { background: var(--accent-warm); }
+  .phase-4 .cycle-phase-num { background: #5a7a5e; }
+
+  /* Connecting arrows ring */
+  .ring-svg {
+    width: 100%;
+    height: 100%;
+  }
+
+  @media (max-width: 768px) {
+    .page-header-with-img {
+      flex-direction: column;
+      padding: 2rem 1.5rem 1.5rem;
+    }
+    .page-header-photo {
+      width: 160px;
+      height: 105px;
+    }
+    .audit-cycle-wrapper {
+      max-width: 100%;
+    }
+    .cycle-phase {
+      width: 140px;
+    }
+    .phase-2 { right: -4%; }
+    .phase-4 { left: -4%; }
+    .cycle-phase-tasks { font-size: 0.58rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ═══════ PROTOTYPE 1: PAGE HEADER WITH SMALL IMAGE ═══════ -->
+<div class="section">
+  <div class="prototype-label">Prototype: Intel Page Header (image in corner)</div>
+
+  <div class="page-header-with-img">
+    <div class="page-header-text">
+      <h1>Intel UK</h1>
+      <p>Senior Auditor &mdash; Risk &amp; Customer Audit | 2022&ndash;2026 | EMEA &amp; Asia</p>
+    </div>
+    <div class="page-header-photo">
+      <img src="img/intel.jpg" alt="Intel Corporation UK, Swindon campus">
+    </div>
+  </div>
+</div>
+
+<!-- ═══════ PROTOTYPE 2: AUDIT LIFECYCLE DIAGRAM ═══════ -->
+<div class="section">
+  <div class="prototype-label">Prototype: Audit Lifecycle Diagram</div>
+
+  <div class="audit-cycle-box">
+    <div class="chart-title">Audit Lifecycle</div>
+
+    <div class="audit-cycle-wrapper">
+
+      <!-- Center -->
+      <div class="cycle-center">
+        <div class="cycle-center-label">Audit<br>Lifecycle</div>
+      </div>
+
+      <!-- Circular ring with arrows -->
+      <svg class="ring-svg cycle-ring" viewBox="0 0 500 500">
+        <defs>
+          <marker id="arrow1" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+            <polygon points="0 0, 8 3, 0 6" fill="#2c4a6e"/>
+          </marker>
+          <marker id="arrow2" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+            <polygon points="0 0, 8 3, 0 6" fill="#3d6090"/>
+          </marker>
+          <marker id="arrow3" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+            <polygon points="0 0, 8 3, 0 6" fill="#b8924a"/>
+          </marker>
+          <marker id="arrow4" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+            <polygon points="0 0, 8 3, 0 6" fill="#5a7a5e"/>
+          </marker>
+        </defs>
+
+        <!-- Arc segments (shorter quarter arcs) -->
+        <!-- Top to Right -->
+        <path d="M 290 120 A 135 135 0 0 1 385 215" fill="none" stroke="#2c4a6e" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arrow1)" opacity="0.45"/>
+        <!-- Right to Bottom -->
+        <path d="M 385 285 A 135 135 0 0 1 290 380" fill="none" stroke="#3d6090" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arrow2)" opacity="0.45"/>
+        <!-- Bottom to Left -->
+        <path d="M 210 380 A 135 135 0 0 1 115 285" fill="none" stroke="#b8924a" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arrow3)" opacity="0.45"/>
+        <!-- Left to Top -->
+        <path d="M 115 215 A 135 135 0 0 1 210 120" fill="none" stroke="#5a7a5e" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arrow4)" opacity="0.45"/>
+      </svg>
+
+      <!-- Phase 1: Pre-Audit (top) -->
+      <div class="cycle-phase phase-1">
+        <div class="cycle-phase-num">1</div>
+        <div class="cycle-phase-title">Pre-Audit Phase</div>
+        <div class="cycle-phase-tasks">
+          KYC<br>
+          Scope Definition<br>
+          Data Analysis<br>
+          Strategy
+        </div>
+      </div>
+
+      <!-- Phase 2: Onsite Audit (right) -->
+      <div class="cycle-phase phase-2">
+        <div class="cycle-phase-num">2</div>
+        <div class="cycle-phase-title">Onsite Audit</div>
+        <div class="cycle-phase-tasks">
+          Process Interviews<br>
+          Document Review<br>
+          Evidence Collection<br>
+          Test of Controls
+        </div>
+      </div>
+
+      <!-- Phase 3: Post-Onsite (bottom) -->
+      <div class="cycle-phase phase-3">
+        <div class="cycle-phase-num">3</div>
+        <div class="cycle-phase-title">Post-Onsite Phase</div>
+        <div class="cycle-phase-tasks">
+          Analysis &amp; Audit Results<br>
+          Internal Alignment<br>
+          Financial Impact Assessment<br>
+          Non-Compliance Recovery<br>
+          Recommendations
+        </div>
+      </div>
+
+      <!-- Phase 4: Audit Closure (left) -->
+      <div class="cycle-phase phase-4">
+        <div class="cycle-phase-num">4</div>
+        <div class="cycle-phase-title">Audit Closure</div>
+        <div class="cycle-phase-tasks">
+          Results to Partners &amp; Management<br>
+          Audit Closure Letter Issued
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

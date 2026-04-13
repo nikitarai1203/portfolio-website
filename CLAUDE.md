@@ -60,7 +60,7 @@ Always consider SEO as this is a portfolio and must be well ranked on Google etc
 | Home | `index.html` | Banner, contact header, stats bar, bento grid metrics/charts, teaser cards to other pages |
 | Career | `career.html` | 7-card vertical timeline (full professional journey) |
 | Intel UK | `intel.html` | Recovery bar chart, projects breakdown, global footprint |
-| Startups | `startups.html` | Mini metrics (3 tiles) + Clover/Quintype/Audit breakdowns |
+| Startups | `startups.html` | Mini metrics (3 tiles) + two rich company story sections (Clover, Quintype) with company intros, contribution card grids, tags |
 | AI | `ai.html` | 3 AI project cards (sanctions, automation, this website) |
 | MBA | `mba.html` | Placeholder — content to be added later |
 | Blog | `blog.html` | Placeholder — content to be added later |
@@ -155,13 +155,18 @@ Bridging compliance, finance, and AI — from startup chaos to enterprise scale.
 
 **IMPORTANT: Nikita does not want Intel-specific internal details or sensitive geopolitical references on the website. Keep all descriptions generic when referencing work done at Intel.**
 
-## Startups & Early Career (startups.html)
-- 3 mini metric cards (₹3.8M recovered at Clover, 60% control gaps reduced at Clover, 25% cost reduction at Quintype)
-- Year breakdown for Clover, Quintype, and Audit firms
+## Startups (startups.html)
+- Page renamed from "Startups & Early Career" to "Startups" — audit firms removed (covered on Career timeline)
+- 3 mini metric cards: ₹0.6M fraud detected & recovered (Clover), 60% control gaps reduced (Clover), 25% cost reduction (Quintype)
+- Two rich company story sections (Clover first, then Quintype — reverse chronological):
+  - Each has: company header with image, "The Company" intro paragraph, "What I Built" 2-column contribution card grid (6 cards each with SVG icons), and skill tags
+  - **Clover Ventures / Deep Rooted** (2020–2021): Agritech, 13-member team, internal controls, fraud detection ₹0.6M, vendor negotiations (70+ suppliers), Series B reporting, BDO audit, legacy asset valuation
+  - **Quintype Technologies** (2017–2020): Media-tech SaaS, books from scratch, US GAAP, subscription revenue, 25% cost reduction, statutory audits, Omidyar due diligence, Series B coordination
+- CSS: New `.startup-company`, `.startup-header`, `.startup-contrib-grid`, `.startup-contrib-card` classes with responsive mobile stacking
 
 ## Key Factual Corrections Applied
-- **Quintype**: No recoveries happened here. The ₹3.8M recovery was at **Clover** (fraud detection and recovery of stolen amount).
-- **Clover**: Fraud detection AND recovery of the stolen amount happened here.
+- **Quintype**: No recoveries happened here. Cost reduction (25%) and working capital improvement (15%) were the key financial wins.
+- **Clover**: Fraud detection and recovery of ₹0.6M (not ₹3.8M as previously shown). The ₹3.8M figure was incorrect.
 - **Intel end date**: Jan 2026 (role made redundant Dec 2025, severance paid through Jan 2026). Website shows 2022–2026.
 - **NDA compliance**: NEVER use specific client/vendor names (e.g. Amazon, specific cloud providers by name) in bar chart labels, descriptions, or anywhere on the site. Nikita is under NDA. Always use generic terms like "Vendor Audit Recovery", "Rebate Overpayment", "Cloud Service Provider" etc. This applies to ALL pages.
 
@@ -188,6 +193,10 @@ Bridging compliance, finance, and AI — from startup chaos to enterprise scale.
 | Section heading | `.section-heading` | DM Sans, 1.6rem |
 | AI project cards | `.ai-project-card` | 3-column grid (1-col on mobile) |
 | Tags | `.tag` | Small pills, slate blue |
+| Startup section | `.startup-company` | Full-width card with left accent bar on hover |
+| Startup header | `.startup-header` | Flex: text + image side by side (stacks on mobile) |
+| Startup contrib grid | `.startup-contrib-grid` | 2-col card grid (1-col on mobile) |
+| Startup contrib card | `.startup-contrib-card` | Icon + title + description, subtle hover lift |
 | Placeholder | `.placeholder-content` | Centered card for MBA/Blog "coming soon" |
 
 ## Responsive Breakpoint

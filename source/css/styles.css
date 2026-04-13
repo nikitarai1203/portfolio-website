@@ -1610,6 +1610,318 @@ body::before {
   border-radius: 8px;
 }
 
+/* ── INTEL PAGE HEADER WITH PHOTO ── */
+.intel-header-row {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.intel-header-photo {
+  flex-shrink: 0;
+  width: 200px;
+  height: 130px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-light);
+}
+
+.intel-header-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ── INTEL TWO-COLUMN LAYOUT ── */
+.intel-two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+  margin-bottom: 1.5rem;
+  align-items: stretch;
+}
+
+.intel-two-col > .chart-box {
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.intel-projects-box .year-breakdown {
+  flex: 1;
+}
+
+.intel-projects-box .year-detail-sub ul li {
+  margin-bottom: 0.6rem;
+}
+
+/* ── AUDIT LIFECYCLE DIAGRAM ── */
+.audit-cycle-box {
+  padding-bottom: 2.5rem;
+  overflow: hidden;
+}
+
+.audit-cycle-wrapper {
+  position: relative;
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+  aspect-ratio: 1;
+}
+
+.cycle-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  z-index: 3;
+}
+
+.cycle-center-label {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.85rem;
+  color: var(--accent);
+  line-height: 1.2;
+}
+
+.cycle-ring {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+}
+
+.ring-svg {
+  width: 100%;
+  height: 100%;
+}
+
+.cycle-phase {
+  position: absolute;
+  z-index: 2;
+  text-align: center;
+  width: 160px;
+}
+
+.cycle-phase-num {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.72rem;
+  color: #fff;
+  margin-bottom: 0.3rem;
+}
+
+.cycle-phase-title {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 0.65rem;
+  color: var(--text);
+  margin-bottom: 0.2rem;
+}
+
+.cycle-phase-tasks {
+  font-size: 0.55rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+/* Phase positions */
+.phase-1 { top: 0%; left: 50%; transform: translateX(-50%); }
+.phase-2 { top: 42%; right: -6%; transform: translateY(-50%); }
+.phase-3 { bottom: -4%; left: 50%; transform: translateX(-50%); }
+.phase-4 { top: 42%; left: -6%; transform: translateY(-50%); }
+
+/* Phase colors */
+.phase-color-1 { background: var(--accent); }
+.phase-color-2 { background: var(--accent-light); }
+.phase-color-3 { background: var(--accent-warm); }
+.phase-color-4 { background: #5a7a5e; }
+
+/* ── STARTUP COMPANY SECTIONS ── */
+.startup-company {
+  background: var(--bg-card);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 2rem 2.2rem;
+  margin-bottom: 1.5rem;
+  transition: box-shadow var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.startup-company::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 3px;
+  background: linear-gradient(to bottom, var(--accent), var(--accent-light));
+  opacity: 0;
+  transition: opacity var(--transition);
+}
+
+.startup-company:hover {
+  box-shadow: var(--shadow-md);
+}
+
+.startup-company:hover::before {
+  opacity: 1;
+}
+
+/* Company header: text + image side by side */
+.startup-header {
+  display: flex;
+  align-items: flex-start;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.2rem;
+  border-bottom: 1px solid var(--border-faint);
+}
+
+.startup-header-text {
+  flex: 1;
+}
+
+.startup-overline {
+  font-size: 0.6rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-warm);
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.startup-name {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 700;
+  font-size: 1.6rem;
+  color: var(--text);
+  line-height: 1.2;
+  margin-bottom: 0.15rem;
+}
+
+.startup-brand {
+  font-size: 0.75rem;
+  color: var(--text-secondary);
+  font-weight: 400;
+  margin-bottom: 0.4rem;
+}
+
+.startup-role {
+  font-size: 0.68rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--accent-light);
+  font-weight: 500;
+}
+
+.startup-header-img {
+  flex-shrink: 0;
+  width: 160px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-faint);
+  background: var(--bg-card);
+}
+
+.startup-header-img img {
+  width: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+/* Company about section */
+.startup-about {
+  margin-bottom: 1.5rem;
+}
+
+.startup-about-label {
+  font-size: 0.58rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent-warm);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.startup-about-text {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* Contribution cards grid */
+.startup-contributions {
+  margin-bottom: 0.5rem;
+}
+
+.startup-contrib-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+}
+
+.startup-contrib-card {
+  padding: 1.1rem 1.2rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-faint);
+  background: rgba(250, 249, 247, 0.5);
+  transition: all var(--transition);
+}
+
+.startup-contrib-card:hover {
+  border-color: var(--border-light);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+  transform: translateY(-1px);
+}
+
+.startup-contrib-icon {
+  color: var(--accent);
+  margin-bottom: 0.5rem;
+  opacity: 0.85;
+  background: var(--accent-subtle);
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition);
+}
+
+.startup-contrib-card:hover .startup-contrib-icon {
+  background: var(--accent-glow);
+  transform: scale(1.05);
+}
+
+.startup-contrib-title {
+  font-family: 'DM Sans', sans-serif;
+  font-weight: 600;
+  font-size: 0.82rem;
+  color: var(--text);
+  margin-bottom: 0.3rem;
+}
+
+.startup-contrib-desc {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.startup-contrib-desc strong {
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
 /* ═══════════════════════════════════════════════════
    RESPONSIVE — MOBILE (≤ 768px)
    ═══════════════════════════════════════════════════ */
@@ -1740,6 +2052,45 @@ body::before {
 
   /* AI projects */
   .ai-projects { grid-template-columns: 1fr; }
+
+  /* Intel page */
+  .intel-header-row {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .intel-header-photo {
+    width: 160px;
+    height: 105px;
+  }
+  .intel-two-col {
+    grid-template-columns: 1fr;
+  }
+  .audit-cycle-wrapper {
+    max-width: 300px;
+  }
+  .cycle-phase { width: 120px; }
+  .cycle-phase-tasks { font-size: 0.5rem; }
+  .phase-2 { right: -3%; }
+  .phase-4 { left: -3%; }
+
+  /* Startup sections */
+  .startup-company {
+    padding: 1.4rem 1.3rem;
+  }
+  .startup-header {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .startup-header-img {
+    width: 100%;
+    max-width: 240px;
+  }
+  .startup-name {
+    font-size: 1.3rem;
+  }
+  .startup-contrib-grid {
+    grid-template-columns: 1fr;
+  }
 
   /* Placeholder */
   .placeholder-content { padding: 3rem 1.5rem; }

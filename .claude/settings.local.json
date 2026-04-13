@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dir:*)",
+      "Bash(git commit:*)",
+      "Bash(git config:*)",
+      "Bash(git push:*)",
+      "Bash(nslookup:*)",
+      "WebFetch(domain:docs.github.com)",
+      "Bash(git add:*)",
+      "WebFetch(domain:raw.githubusercontent.com)",
+      "WebFetch(domain:nikitarai1203.github.io)",
+      "Bash(python3:*)",
+      "Bash(python:*)",
+      "WebFetch(domain:www.forbesindia.com)",
+      "Bash(ren:*)",
+      "Bash(ren \"Screenshot 2026-02-18 153614.png\" icai-logo.png)",
+      "Bash(pip install:*)",
+      "Bash(start \"\" \"C:\\\\Users\\\\nikit\\\\OneDrive\\\\Desktop\\\\Website- Nikita\\\\source\\\\career.html\")",
+      "Bash(powershell -Command:*)",
+      "WebFetch(domain:www.linkedin.com)"
+    ]
+  }
+}

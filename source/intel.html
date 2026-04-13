@@ -34,10 +34,17 @@
   </div>
 </nav>
 
-<!-- ════════ PAGE HEADER ════════ -->
-<div class="page-header">
-  <h1 class="page-title">Intel UK</h1>
-  <p class="page-subtitle">Senior Auditor &mdash; Risk &amp; Customer Audit | 2022&ndash;2026 | EMEA &amp; Asia</p>
+<!-- ════════ PAGE HEADER WITH IMAGE ════════ -->
+<div class="page-header intel-page-header">
+  <div class="intel-header-row">
+    <div>
+      <h1 class="page-title">Intel UK</h1>
+      <p class="page-subtitle">Senior Auditor &mdash; Risk &amp; Customer Audit | 2022&ndash;2026 | EMEA &amp; Asia</p>
+    </div>
+    <div class="intel-header-photo">
+      <img src="img/intel.jpg" alt="Intel Corporation UK, Swindon campus" loading="lazy">
+    </div>
+  </div>
 </div>
 
 <!-- ════════ CONTENT ════════ -->
@@ -56,10 +63,10 @@
       </div>
       <div class="bar-group">
         <div class="bar" data-height="18" style="height: 0%;">
-          <span class="bar-value">$145K</span>
+          <span class="bar-value">$145K*</span>
         </div>
         <div class="bar-label">2024</div>
-        <div class="bar-sublabel">Control Gap<br>Finding*</div>
+        <div class="bar-sublabel">Control Gap<br>Finding</div>
       </div>
       <div class="bar-group">
         <div class="bar" data-height="78" style="height: 0%;">
@@ -76,28 +83,130 @@
         <div class="bar-sublabel">Non Compliance<br>Recovery</div>
       </div>
     </div>
-    <div class="chart-footnote">*$145K identified as missed rebate due to control gaps &mdash; time-barred, not recoverable.</div>
+    <div class="chart-footnote">*Impact of audit findings.</div>
   </div>
 
-  <!-- Projects & Special Audits -->
-  <div class="chart-box fade-in">
-    <div class="chart-title">Strategic Projects (2023&ndash;2024)</div>
-    <div class="year-breakdown">
-      <div class="year-row-item">
-        <div class="year-details">
-          <div class="year-detail-sub">
-            <ul>
-              <li>Logistics discount cost-benefit analysis</li>
-              <li>Audit process improvement (timeline calculator, acronym &amp; data source indexation) &mdash; integrated into Intel global SOPs</li>
-              <li>First-ever Cloud Service Provider audit framework &amp; documentation</li>
-              <li>10-year rebate data cube eliminating analyst dependency</li>
-              <li>Global auditor training programme reaching 21 auditors across EMEA, APJ, AMR &amp; PRC</li>
-              <li>Working model for highly technical audits (audit + IT collaboration)</li>
-            </ul>
+  <!-- ── Two-column: Strategic Projects + Audit Lifecycle ── -->
+  <div class="intel-two-col fade-in">
+
+    <!-- Projects & Special Audits -->
+    <div class="chart-box intel-projects-box">
+      <div class="chart-title">Strategic Projects (2023&ndash;2026)</div>
+      <div class="year-breakdown">
+        <div class="year-row-item">
+          <div class="year-details">
+            <div class="year-detail-sub">
+              <ul>
+                <li>Retail rebate audits &amp; large data analysis</li>
+                <li>Logistics discount cost-benefit analysis</li>
+                <li>Audit process improvement (timeline calculator, acronym &amp; data source indexation) &mdash; integrated into Intel global SOPs</li>
+                <li>First-ever Cloud Service Provider audit framework &amp; documentation</li>
+                <li>Global auditor training programme reaching 21 auditors across EMEA, APJ, AMR &amp; PRC</li>
+                <li>Collaboration model for highly technical audits (audit + IT)</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
+      <!-- Skill Tags -->
+      <div class="card-tags" style="margin-top: 1.2rem;">
+        <span class="tag">SOX Compliance</span>
+        <span class="tag">ERM</span>
+        <span class="tag">Fraud Prevention</span>
+        <span class="tag">GRC</span>
+        <span class="tag">Data Analytics</span>
+        <span class="tag">EMEA &amp; Asia</span>
+        <span class="tag">Process Improvement</span>
+        <span class="tag">Team Training</span>
+      </div>
     </div>
+
+    <!-- Audit Lifecycle Diagram -->
+    <div class="chart-box audit-cycle-box">
+      <div class="chart-title">Audit Lifecycle</div>
+      <div class="audit-cycle-wrapper">
+
+        <!-- Center -->
+        <div class="cycle-center">
+          <div class="cycle-center-label">Audit<br>Lifecycle</div>
+        </div>
+
+        <!-- Circular ring with arrows -->
+        <svg class="ring-svg cycle-ring" viewBox="0 0 500 500">
+          <defs>
+            <marker id="arrow1" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+              <polygon points="0 0, 8 3, 0 6" fill="#2c4a6e"/>
+            </marker>
+            <marker id="arrow2" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+              <polygon points="0 0, 8 3, 0 6" fill="#3d6090"/>
+            </marker>
+            <marker id="arrow3" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+              <polygon points="0 0, 8 3, 0 6" fill="#b8924a"/>
+            </marker>
+            <marker id="arrow4" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+              <polygon points="0 0, 8 3, 0 6" fill="#5a7a5e"/>
+            </marker>
+          </defs>
+          <!-- Top to Right -->
+          <path d="M 290 120 A 135 135 0 0 1 385 215" fill="none" stroke="#2c4a6e" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arrow1)" opacity="0.45"/>
+          <!-- Right to Bottom -->
+          <path d="M 385 285 A 135 135 0 0 1 290 380" fill="none" stroke="#3d6090" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arrow2)" opacity="0.45"/>
+          <!-- Bottom to Left -->
+          <path d="M 210 380 A 135 135 0 0 1 115 285" fill="none" stroke="#b8924a" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arrow3)" opacity="0.45"/>
+          <!-- Left to Top -->
+          <path d="M 115 215 A 135 135 0 0 1 210 120" fill="none" stroke="#5a7a5e" stroke-width="2" stroke-dasharray="5 4" marker-end="url(#arrow4)" opacity="0.45"/>
+        </svg>
+
+        <!-- Phase 1: Pre-Audit (top) -->
+        <div class="cycle-phase phase-1">
+          <div class="cycle-phase-num phase-color-1">1</div>
+          <div class="cycle-phase-title">Pre-Audit Phase</div>
+          <div class="cycle-phase-tasks">
+            KYC<br>
+            Scope Definition<br>
+            Data Analysis<br>
+            Strategy
+          </div>
+        </div>
+
+        <!-- Phase 2: Onsite Audit (right) -->
+        <div class="cycle-phase phase-2">
+          <div class="cycle-phase-num phase-color-2">2</div>
+          <div class="cycle-phase-title">Onsite Audit</div>
+          <div class="cycle-phase-tasks">
+            Process Interviews<br>
+            Document Review<br>
+            Evidence Collection<br>
+            Test of Controls
+          </div>
+        </div>
+
+        <!-- Phase 3: Post-Onsite (bottom) -->
+        <div class="cycle-phase phase-3">
+          <div class="cycle-phase-num phase-color-3">3</div>
+          <div class="cycle-phase-title">Post-Onsite Phase</div>
+          <div class="cycle-phase-tasks">
+            Analysis &amp; Audit Results<br>
+            Internal Alignment<br>
+            Financial Impact Assessment<br>
+            Non-Compliance Recovery<br>
+            Recommendations
+          </div>
+        </div>
+
+        <!-- Phase 4: Audit Closure (left) -->
+        <div class="cycle-phase phase-4">
+          <div class="cycle-phase-num phase-color-4">4</div>
+          <div class="cycle-phase-title">Audit Closure</div>
+          <div class="cycle-phase-tasks">
+            Results to Partners &amp; Management<br>
+            Audit Closure Letter Issued
+          </div>
+        </div>
+
+      </div>
+    </div>
+
   </div>
 
   <!-- Global Footprint -->
