@@ -783,6 +783,22 @@ body::before {
   font-style: italic;
 }
 
+.recovery-total {
+  font-family: 'Lora', Georgia, serif;
+  font-weight: 700;
+  font-size: 2rem;
+  color: var(--accent);
+  text-align: center;
+  margin-top: 0.5rem;
+}
+
+.recovery-total-label {
+  font-size: 0.65rem;
+  color: var(--text-muted);
+  text-align: center;
+  margin-bottom: 1.2rem;
+}
+
 /* ── YEAR BREAKDOWN ── */
 .year-breakdown {
   display: flex;
