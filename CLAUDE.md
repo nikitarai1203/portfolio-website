@@ -18,21 +18,21 @@ Nikita is a Senior Auditor & Finance professional (CA + MBA from University of E
 ```
 Website- Nikita/
 ├── CLAUDE.md                ← This file
-├── .gitignore               ← Excludes OS files, .pptx, etc.
+├── .gitignore               ← Excludes OS files, .pptx, PDFs, prototype files, original uploads, .claude/
 ├── .github/
 │   └── workflows/
 │       └── deploy.yml       ← GitHub Pages deployment workflow
-├── Linkedin profile.pdf     ← LinkedIn export (reference for bio/experience details)
+├── (CVs and personal docs moved out of repo — keep separate)
 ├── source/
 │   ├── index.html           ← Landing page (bento grid overview)
 │   ├── career.html          ← Professional Journey (7-card timeline)
-│   ├── intel.html           ← Intel UK deep-dive (recoveries, projects, countries & audits, footprint)
-│   ├── startups.html        ← Startups & Early Career (Clover, Quintype, Audit)
+│   ├── intel.html           ← Intel UK deep-dive (recoveries, strategic projects + audit lifecycle diagram, footprint)
+│   ├── startups.html        ← Startups (Clover, Quintype — rich company story sections)
 │   ├── ai.html              ← AI & Innovation (3 project cards)
 │   ├── mba.html             ← MBA at Edinburgh (placeholder)
 │   ├── blog.html            ← Blog (placeholder)
 │   ├── css/
-│   │   └── styles.css       ← Shared stylesheet (~1490 lines)
+│   │   └── styles.css       ← Shared stylesheet (~1850 lines)
 │   ├── js/
 │   │   └── main.js          ← Shared JavaScript (~93 lines)
 │   ├── img/
@@ -42,7 +42,8 @@ Website- Nikita/
 │   │   ├── mba-graduation.jpeg   ← Nikita's Edinburgh MBA graduation (161KB, 600×1066)
 │   │   ├── mba-video.mp4         ← Edinburgh university video (4MB, for mba.html)
 │   │   ├── clover-deeprooted.png ← Deep Rooted / Clover brand image (314KB, 600×281)
-│   │   ├── quintype-office.png   ← Quintype Technologies office (257KB, 600×605)
+│   │   ├── quintype-banner.png   ← Quintype Technologies banner (600×315, for startups.html)
+│   │   ├── quintype-q-logo.png   ← Quintype Q logo (400×400, for career.html timeline)
 │   │   └── icai-logo.png         ← ICAI logo, used for CA cards (121KB, 461×338)
 │   └── CNAME                ← Custom domain config
 └── .claude/
@@ -59,7 +60,7 @@ Always consider SEO as this is a portfolio and must be well ranked on Google etc
 |---|---|---|
 | Home | `index.html` | Banner, contact header, stats bar, bento grid metrics/charts, teaser cards to other pages |
 | Career | `career.html` | 7-card vertical timeline (full professional journey) |
-| Intel UK | `intel.html` | Recovery bar chart, projects breakdown, global footprint |
+| Intel UK | `intel.html` | Corner campus photo, recovery bar chart, 2-col strategic projects + audit lifecycle diagram, global footprint |
 | Startups | `startups.html` | Mini metrics (3 tiles) + two rich company story sections (Clover, Quintype) with company intros, contribution card grids, tags |
 | AI | `ai.html` | 3 AI project cards (sanctions, automation, this website) |
 | MBA | `mba.html` | Placeholder — content to be added later |
@@ -143,7 +144,19 @@ Bridging compliance, finance, and AI — from startup chaos to enterprise scale.
 | 6 | 2011–2015 | Multiple Mid-Sized CA Firms · India | Audit Team Lead & Tax Consultant | Audit & Tax Practice | Statutory Audit, Tax Consulting, Bank Audit, Stock Audit, Training Junior Auditors, Internal Audit |
 | 7 | 2008–2012 | Institute of Chartered Accountants of India | Chartered Accountant (CA) | Professional Qualification · 3.5 Years Articleship (Internship) | CA, ICAI, Audit, Taxation |
 
-**Design note:** Timeline cards have NO paragraph descriptions — only company, title, role, award (Intel only), and tags. This was a deliberate decision to keep them scannable. Each timeline entry has an image in the left column (`.timeline-image`) that reveals on hover (desktop) or shows always (mobile). Images: Intel campus, MBA graduation, Deep Rooted brand, Quintype office, and ICAI logo (shared by Ranga Rao, CA Firms, and CA Qualification cards).
+**Design note:** Timeline cards have NO paragraph descriptions. Quintype Q logo is constrained to `max-width: 120px` inline since it's a square image (400×400) unlike the other rectangular timeline images — only company, title, role, award (Intel only), and tags. This was a deliberate decision to keep them scannable. Each timeline entry has an image in the left column (`.timeline-image`) that reveals on hover (desktop) or shows always (mobile). Images: Intel campus, MBA graduation, Deep Rooted brand, Quintype Q logo, and ICAI logo (shared by Ranga Rao, CA Firms, and CA Qualification cards).
+
+## Intel UK (intel.html)
+- **Page header**: Intel campus photo in top-right corner (200×130px) via `.intel-header-row` and `.intel-header-photo`
+- **Audit Recoveries bar chart**: 4 bars (2023 Consumption $80K, 2024 Control Gap Finding $145K*, 2025 Retail Rebate Overpayment $5.48M, 2025 Non Compliance Recovery $6.98M). Asterisk on $145K* with footnote: "*Impact of audit findings."
+- **Two-column layout** (`.intel-two-col`): Strategic Projects on left, Audit Lifecycle diagram on right, with `align-items: stretch` for equal height
+- **Strategic Projects** (2023–2026): Retail rebate audits & large data analysis, Collaboration model for highly technical audits (audit + IT), skill tags at bottom
+- **Audit Lifecycle Diagram**: SVG-based circular diagram with 4 phases connected by dashed arrow arcs:
+  - Phase 1 (Pre-Audit): KYC, Scope Definition, Data Analysis, Strategy
+  - Phase 2 (Onsite Audit): Process Interviews, Document Review, Evidence Collection, Test of Controls
+  - Phase 3 (Post-Onsite): Analysis & Audit Results, Internal Alignment, Financial Impact Assessment, Non-Compliance Recovery, Recommendations
+  - Phase 4 (Audit Closure): Results to Partners & Management, Audit Closure Letter Issued
+- CSS classes: `.audit-cycle-box`, `.audit-cycle-wrapper`, `.cycle-center`, `.cycle-phase`, `.phase-1` through `.phase-4`, `.phase-color-1` through `.phase-color-4`
 
 ## AI & Innovation (ai.html) — 3 project cards
 
@@ -198,6 +211,13 @@ Bridging compliance, finance, and AI — from startup chaos to enterprise scale.
 | Startup contrib grid | `.startup-contrib-grid` | 2-col card grid (1-col on mobile) |
 | Startup contrib card | `.startup-contrib-card` | Icon + title + description, subtle hover lift |
 | Placeholder | `.placeholder-content` | Centered card for MBA/Blog "coming soon" |
+| Intel header row | `.intel-header-row` | Flex row: page header + corner photo |
+| Intel header photo | `.intel-header-photo` | Corner campus photo (200×130px) |
+| Intel two-col | `.intel-two-col` | 2-col grid for projects + audit lifecycle |
+| Intel projects box | `.intel-projects-box` | Strategic projects card with skill tags |
+| Audit cycle box | `.audit-cycle-box` | Container for circular audit lifecycle diagram |
+| Audit cycle wrapper | `.audit-cycle-wrapper` | Relative positioned SVG + phase labels |
+| Cycle phase | `.cycle-phase` | Absolutely positioned phase box (1–4) |
 
 ## Responsive Breakpoint
 Single breakpoint at `max-width: 768px` handles all mobile styling:
@@ -231,3 +251,7 @@ Single breakpoint at `max-width: 768px` handles all mobile styling:
 - **Footer note**: "Designed & built with AI tools" — subtle signal of AI fluency
 - **Location format**: "City, India" used consistently across all Indian companies
 - **Banner**: Clean 2px accent line separator (no gradient overlay, no image filters)
+- **Quintype images**: `quintype-office.png` replaced with `quintype-q-logo.png` (timeline) and `quintype-banner.png` (startups page)
+- **Intel corner photo**: Small campus photo (200×130px) in page header top-right — not a full-width hero
+- **Audit lifecycle diagram**: SVG circular diagram next to Strategic Projects — keeps Intel page content-rich without being text-heavy
+- **CVs and personal docs**: Kept outside the repo (in .gitignore) — never commit personal documents to the public GitHub repo
