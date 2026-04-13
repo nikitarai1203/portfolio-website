@@ -10,3 +10,18 @@ Desktop.ini
 
 # PowerPoint files (not part of the website)
 *.pptx
+
+# CVs and personal documents (keep private)
+*.pdf
+
+# Prototype / working files
+source/prototype-*.html
+
+# Original uploaded images (optimised versions already committed)
+source/img/Quintype logo.png
+source/img/Quintype new.avif
+source/img/quintype-new-preview.png
+source/img/WhatsApp Image*
+
+# Claude local config
+.claude/
