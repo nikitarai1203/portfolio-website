@@ -1668,6 +1668,7 @@ body::before {
   max-width: 360px;
   margin: 0 auto;
   aspect-ratio: 1;
+  padding-bottom: 4rem;
 }
 
 .cycle-center {
@@ -1734,10 +1735,10 @@ body::before {
 }
 
 /* Phase positions */
-.phase-1 { top: 0%; left: 50%; transform: translateX(-50%); }
-.phase-2 { top: 42%; right: -6%; transform: translateY(-50%); }
-.phase-3 { bottom: -4%; left: 50%; transform: translateX(-50%); }
-.phase-4 { top: 42%; left: -6%; transform: translateY(-50%); }
+.phase-1 { top: -2%; left: 50%; transform: translateX(-50%); }
+.phase-2 { top: 42%; right: -8%; transform: translateY(-50%); }
+.phase-3 { bottom: -10%; left: 50%; transform: translateX(-50%); }
+.phase-4 { top: 42%; left: -8%; transform: translateY(-50%); }
 
 /* Phase colors */
 .phase-color-1 { background: var(--accent); }
