@@ -87,7 +87,7 @@ Each page has `data-page` attribute on `<body>` (e.g., `data-page="home"`, `data
 - **No other dependencies** (Leaflet.js map was removed)
 
 ## Root Font Size
-`html { font-size: 18px; }` — All sizing uses `rem` units. Changing this one value scales the entire site proportionally.
+`html { font-size: 19px; }` — All sizing uses `rem` units. Changing this one value scales the entire site proportionally.
 
 ## CSS Design Tokens
 ```css
