@@ -637,6 +637,16 @@ body::before {
   margin-bottom: 1rem;
 }
 
+.dissertation-title {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.6rem;
+  font-family: 'Lora', serif;
+  font-style: italic;
+  line-height: 1.5;
+}
+
 /* ── METRIC VALUES (shared) ── */
 .metric-value {
   font-family: 'Lora', Georgia, serif;
