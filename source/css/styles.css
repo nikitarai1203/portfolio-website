@@ -102,7 +102,7 @@ body::before {
 }
 
 .nav-link {
-  font-size: 0.68rem;
+  font-size: 0.75rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--text-muted);
@@ -194,8 +194,8 @@ body::before {
   bottom: 0;
   left: 0;
   right: 0;
-  height: 2px;
-  background: linear-gradient(90deg, transparent, var(--accent), transparent);
+  height: 3px;
+  background: linear-gradient(90deg, transparent 5%, var(--accent) 30%, var(--accent) 70%, transparent 95%);
 }
 
 /* ── PAGE HEADER (inner pages) ── */
@@ -1618,12 +1618,23 @@ body::before {
 
 .blog-embed-wrap {
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
 
 .blog-embed-wrap iframe {
   max-width: 100%;
   border-radius: 8px;
+}
+
+.blog-embed-fallback {
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.blog-embed-fallback a {
+  color: var(--accent);
 }
 
 /* ── INTEL PAGE HEADER WITH PHOTO ── */

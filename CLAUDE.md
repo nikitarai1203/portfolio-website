@@ -40,6 +40,9 @@ Website- Nikita/
 │   │   ├── intel.jpg             ← Intel UK Swindon campus (54KB, 600×400)
 │   │   ├── intel-personal.jpeg   ← Intel UK personal photo (49KB, 600×337)
 │   │   ├── mba-graduation.jpeg   ← Nikita's Edinburgh MBA graduation (161KB, 600×1066)
+│   │   ├── mba-degree.jpeg       ← MBA degree scroll and certificate
+│   │   ├── mba-cohort.jpeg       ← MBA Class of 2022 group graduation photo
+│   │   ├── mba-mcewan-hall.jpeg  ← McEwan Hall dome ceiling (graduation venue)
 │   │   ├── mba-video.mp4         ← Edinburgh university video (4MB, for mba.html)
 │   │   ├── clover-deeprooted.png ← Deep Rooted / Clover brand image (314KB, 600×281)
 │   │   ├── quintype-banner.png   ← Quintype Technologies banner (600×315, for startups.html)
