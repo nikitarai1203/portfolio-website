@@ -2108,7 +2108,12 @@ body::before {
   }
   .intel-two-col {
     grid-template-columns: 1fr;
-  }
+  }.recovery-totals-row {
+  gap: 1.5rem;
+}
+.recovery-total {
+  font-size: clamp(1.2rem, 6vw, 2rem);
+}
   .audit-cycle-wrapper {
     max-width: 300px;
   }
