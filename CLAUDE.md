@@ -12,7 +12,7 @@ Infleqtion went public on the **NYSE (ticker INFQ) on 17 Feb 2026** via a SPAC m
 
 **Because Infleqtion is a listed company, the confidentiality bar is HIGHER than it was for Intel** — she may hold material non-public information (MNPI) about an issuer's financial reporting.
 
-- **Safe:** title, employer, dates, Oxford location, contract status (all public on her LinkedIn); that Infleqtion is a newly NYSE-listed quantum technology company; generic scope of SOX work (risk assessment, scoping, process narratives, RCM design, walkthroughs, control design/documentation, ITGC coordination, entity-level controls, segregation of duties).
+- **Safe:** title, employer, dates, Oxford location, contract status (all public on her LinkedIn — though **"Contract" was removed from the timeline card in Aug 2026 at her request**; it is safe to publish but she chose not to display it); that Infleqtion is a newly NYSE-listed quantum technology company; generic scope of SOX work (risk assessment, scoping, process narratives, RCM design, walkthroughs, control design/documentation, ITGC coordination, entity-level controls, segregation of duties).
 - **NEVER publish:** any material weakness, significant deficiency, or control gap; remediation status or deadlines; ERP/systems or external auditor names; financial figures, forecasts, or unreleased results; named colleagues or team structure; quantified wins ("reduced X by Y%") while the work is live and unaudited.
 - **Rule of thumb:** describe her *scope of responsibility*, never her *findings or status*.
 
@@ -143,15 +143,16 @@ Each page has `data-page` attribute on `<body>` (e.g., `data-page="home"`, `data
 ## Header / Tagline
 ```
 Nikita Rai
-Internal Audit · Risk & Controls · Compliance | MBA (Edinburgh) · CA · 12+ Years
-Bridging compliance, finance, and AI — from startup chaos to enterprise scale.
+Internal Audit · SOX Implementation · Risk & Controls · Compliance | MBA (Edinburgh) · CA · 12+ Years
 ```
+
+**Sub-tagline removed (Aug 2026).** The second line used to read *"Bridging compliance, finance, and AI — from startup chaos to enterprise scale."* Nikita asked for it to be taken down while she thinks of a replacement — she did not want that particular line on the site in the meantime. The `.contact-tagline-sub` CSS class is still in `styles.css`, so a new line can be dropped straight back into `index.html` when she has one. **Ask her before writing a replacement — this is her personal positioning statement, not ours to invent.**
 
 ## Timeline Cards (career.html)
 
 | # | Years | Company | Title | Role | Tags |
 |---|---|---|---|---|---|
-| 1 | 2026–Present | Infleqtion UK · Oxford, United Kingdom | UK SOX & Internal Controls Lead | Quantum Technology · Contract | SOX 404, Internal Controls, ICFR, Process Optimisation, Financial Reporting |
+| 1 | 2026–Present | Infleqtion UK · Oxford, United Kingdom | UK SOX & Internal Controls Lead | Quantum Technology | SOX Implementation, ICFR, Process Optimisation |
 | 2 | 2022–2026 | Intel Corporation (UK) Ltd | Senior Auditor — Risk & Customer Audit | EMEA & Asia | SOX, ERM, Fraud Prevention, GRC, EMEA & Asia |
 | 3 | 2021–2022 | The University of Edinburgh | MBA | Strategy · Operational Improvement · Finance | MBA, Strategy, Operations, Finance |
 | 4 | 2020–2021 | Clover Ventures Pvt Ltd · Bangalore, India | Finance Manager | Agritech Retail Startup | Team Lead (13), SOX Controls, Fraud Detection & Recovery, Series B |
@@ -160,7 +161,9 @@ Bridging compliance, finance, and AI — from startup chaos to enterprise scale.
 | 7 | 2011–2015 | Multiple Mid-Sized CA Firms · India | Audit Team Lead & Tax Consultant | Audit & Tax Practice | Statutory Audit, Tax Consulting, Bank Audit, Stock Audit, Training Junior Auditors, Internal Audit |
 | 8 | 2008–2012 | Institute of Chartered Accountants of India | Chartered Accountant (CA) | Professional Qualification · 3.5 Years Articleship (Internship) | CA, ICAI, Audit, Taxation |
 
-**Design note:** Timeline cards have NO paragraph descriptions — **except the Infleqtion card**, which carries a short `.card-description` because the role is new and has no quantified results yet. The text is Nikita's own public LinkedIn sentence, used verbatim as an interim placeholder; she intends to approve a fuller write-up later. This is the only card with a description — a deliberate, acknowledged exception. Quintype Q logo is constrained to `max-width: 120px` inline since it's a square image (400×400) unlike the other rectangular timeline images — only company, title, role, award (Intel only), and tags. This was a deliberate decision to keep them scannable. Each timeline entry has an image in the left column (`.timeline-image`) that reveals on hover (desktop) or shows always (mobile). Images: Intel campus, MBA graduation, Deep Rooted brand, Quintype Q logo, and ICAI logo (shared by Ranga Rao, CA Firms, and CA Qualification cards).
+**Tag wording (Aug 2026):** Timeline tags must not restate each other. On the Infleqtion card, "Internal Controls" and "Financial Reporting" were dropped because **ICFR** already covers both, and "SOX 404" became **"SOX Implementation"** for the same reason (Section 404 *is* the ICFR section) — and because implementation is the rarer, more valuable skill than testing. The literal "SOX 404" keyword still lives in the `<meta name="keywords">` tag on `index.html` for search, so nothing is lost on SEO.
+
+**Design note:** Timeline cards have NO paragraph descriptions — only company, title, role, award (Intel only), and tags. This was a deliberate decision to keep them scannable. The Infleqtion card briefly carried a `.card-description` as an interim placeholder; **it was removed (Aug 2026)** at Nikita's request so the card matches every other card in the timeline. Do NOT reintroduce a description on any timeline card without asking her. Two logos are constrained inline so they don't overpower the photographic images used elsewhere: Quintype Q logo at `max-width: 120px` (square, 400×400) and the Infleqtion wordmark at `max-width: 180px` (wide, 768×225, bright navy/cyan brand colours). Each timeline entry has an image in the left column (`.timeline-image`) that reveals on hover (desktop) or shows always (mobile). Images: Intel campus, MBA graduation, Deep Rooted brand, Quintype Q logo, and ICAI logo (shared by Ranga Rao, CA Firms, and CA Qualification cards).
 
 ## Intel UK (intel.html)
 - **Page header**: Intel campus photo in top-right corner (200×130px) via `.intel-header-row` and `.intel-header-photo`
@@ -219,7 +222,7 @@ Bridging compliance, finance, and AI — from startup chaos to enterprise scale.
 | Timeline dot | `.timeline-dot` | 10px with halo effect on `.visible` |
 | Card | `.card` | Has left accent bar on hover |
 | Timeline image | `.timeline-image` | Hover-reveal image in timeline left column, contain fit, hidden by default on desktop |
-| Card description | `.card-description` | Short paragraph on a timeline card. Used ONLY on the Infleqtion card (see Design note) |
+| Card description | `.card-description` | Short paragraph on a timeline card. Currently UNUSED — no timeline card has a description (see Design note) |
 | Section heading | `.section-heading` | DM Sans, 1.6rem |
 | AI project cards | `.ai-project-card` | 3-column grid (1-col on mobile) |
 | Tags | `.tag` | Small pills, slate blue |
