@@ -144,7 +144,7 @@ Each page has `data-page` attribute on `<body>` (e.g., `data-page="home"`, `data
 ```
 Nikita Rai
 Internal Audit · SOX Implementation · Risk & Controls · Compliance
-12+ Years · MBA - Strategy (Edinburgh, Scotland) · CA
+MBA - Strategy (Edinburgh, Scotland) · CA · 12+ Years
 ```
 **Two lines, split skills / credentials (Aug 2026).** This used to be one long line with a pipe (`|`) before "MBA (Edinburgh)". Nikita disliked the pipe; replacing it with an em dash was also rejected. What she asked for: put the credentials on **their own line** and use **`&middot;` throughout** — no pipes, no dashes as separators in this block. Line 1 is `.contact-tagline` (what she does), line 2 is `.contact-tagline-sub` (what she is), which is what that class is now used for. The hyphen inside "MBA - Strategy" is part of the credential, not a separator.
 
