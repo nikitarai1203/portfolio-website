@@ -127,7 +127,7 @@ Each page has `data-page` attribute on `<body>` (e.g., `data-page="home"`, `data
 1. **Banner** — Edinburgh Castle (320px desktop, 200px mobile, 2px accent line separator)
 2. **Contact Header** — Name + tagline + LinkedIn + "Get in Touch" CTA dropdown
 3. **Stats Bar** — 12+ Years | $7M+ Recoveries | $2M–$372M Project Value
-4. **Bento Grid Section** — "Impact at a Glance"
+4. **Bento Grid Section** — "Impact at a Glance" (heading only — no subheading, see below)
    - Row 1: 4 metric tiles ($12.54M, 12 audits, 10+ countries, 21 trained)
    - Row 2: Recovery bar chart + Global footprint (2-col)
    - Row 3: Team leadership bars + AI teaser link (2-col)
@@ -264,6 +264,7 @@ Single breakpoint at `max-width: 768px` handles all mobile styling:
 - **CTA dropdown** — closes when clicking outside
 
 ## Design Decisions Made
+- **Don't caption a heading that already explains itself (Aug 2026)** — Nikita's rule: *"No need to add a tagline for everything."* The "Impact at a Glance" subheading (*"Key outcomes across 12+ years — led by recent Intel Corporation engagements."*) was removed because the heading and the metric tiles beneath it already say it. Do NOT add a `.section-subheading` under a heading unless it carries information the heading and the content below it don't. The class still exists in `styles.css` and is still used on `mba.html` where the line genuinely explains something.
 - **Multi-page architecture** — each page focused, room to grow, not crowded
 - **Bento grid on landing page only** — other pages use clean section layouts
 - **No banner on inner pages** — compact nav-only header keeps pages fast and focused
