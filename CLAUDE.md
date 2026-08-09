@@ -143,8 +143,9 @@ Each page has `data-page` attribute on `<body>` (e.g., `data-page="home"`, `data
 ## Header / Tagline
 ```
 Nikita Rai
-Internal Audit · SOX Implementation · Risk & Controls · Compliance | MBA (Edinburgh) · CA · 12+ Years
+Internal Audit · SOX Implementation · Risk & Controls · Compliance — MBA (Edinburgh) · CA · 12+ Years
 ```
+The separator between the skills half and the credentials half is an **em dash (`&mdash;`)**, not a pipe. The pipe was removed Aug 2026 — Nikita found the vertical bar visually jarring in the italic serif. The em dash keeps the two halves distinct (what she does / what she is) and matches the dash used in the career page subtitle. Everything else in the line is separated by `&middot;`.
 
 ### Career page subtitle (career.html)
 ```
