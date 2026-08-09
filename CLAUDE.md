@@ -144,9 +144,11 @@ Each page has `data-page` attribute on `<body>` (e.g., `data-page="home"`, `data
 ```
 Nikita Rai
 Internal Audit · SOX Implementation · Risk & Controls · Compliance
-MBA - Strategy (Edinburgh, Scotland) · CA · 12+ Years
+MBA (Strategy) · CA · 12+ Years
 ```
-**Two lines, split skills / credentials (Aug 2026).** This used to be one long line with a pipe (`|`) before "MBA (Edinburgh)". Nikita disliked the pipe; replacing it with an em dash was also rejected. What she asked for: put the credentials on **their own line** and use **`&middot;` throughout** — no pipes, no dashes as separators in this block. Line 1 is `.contact-tagline` (what she does), line 2 is `.contact-tagline-sub` (what she is), which is what that class is now used for. The hyphen inside "MBA - Strategy" is part of the credential, not a separator.
+**Two lines, split skills / credentials (Aug 2026).** This used to be one long line with a pipe (`|`) before "MBA (Edinburgh)". Nikita disliked the pipe; replacing it with an em dash was also rejected. What she asked for: put the credentials on **their own line** and use **`&middot;` throughout** — no pipes, no dashes as separators in this block. Line 1 is `.contact-tagline` (what she does), line 2 is `.contact-tagline-sub` (what she is), which is what that class is now used for. **The specialism is bracketed — "MBA (Strategy)" (Aug 2026).** It was written "MBA - Strategy" until Nikita changed it; the hyphen read as a separator competing with the `&middot;`, whereas brackets bind the specialism to the credential unambiguously. Keep the only separators in this line as `&middot;`.
+
+**Location removed from the credentials line (Aug 2026).** The line read *"MBA - Strategy (Edinburgh, Scotland) · CA · 12+ Years"*; Nikita asked for the "(Edinburgh, Scotland)" parenthetical to go. The Edinburgh association is still stated elsewhere on the home page — the "University of Edinburgh Business School, 2022" highlight tile and the MBA teaser card — plus the `<meta>` description and keywords for SEO, so nothing is lost. Do not put the location back into this line.
 
 ### Career page subtitle (career.html)
 ```
