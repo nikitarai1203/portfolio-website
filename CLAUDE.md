@@ -143,9 +143,10 @@ Each page has `data-page` attribute on `<body>` (e.g., `data-page="home"`, `data
 ## Header / Tagline
 ```
 Nikita Rai
-Internal Audit · SOX Implementation · Risk & Controls · Compliance — MBA (Edinburgh) · CA · 12+ Years
+Internal Audit · SOX Implementation · Risk & Controls · Compliance
+12+ Years · MBA - Strategy (Edinburgh, Scotland) · CA
 ```
-The separator between the skills half and the credentials half is an **em dash (`&mdash;`)**, not a pipe. The pipe was removed Aug 2026 — Nikita found the vertical bar visually jarring in the italic serif. The em dash keeps the two halves distinct (what she does / what she is) and matches the dash used in the career page subtitle. Everything else in the line is separated by `&middot;`.
+**Two lines, split skills / credentials (Aug 2026).** This used to be one long line with a pipe (`|`) before "MBA (Edinburgh)". Nikita disliked the pipe; replacing it with an em dash was also rejected. What she asked for: put the credentials on **their own line** and use **`&middot;` throughout** — no pipes, no dashes as separators in this block. Line 1 is `.contact-tagline` (what she does), line 2 is `.contact-tagline-sub` (what she is), which is what that class is now used for. The hyphen inside "MBA - Strategy" is part of the credential, not a separator.
 
 ### Career page subtitle (career.html)
 ```
@@ -159,7 +160,7 @@ Set Aug 2026, replacing *"12+ years across enterprise audit, startups, and profe
 
 **Do NOT rewrite this as "risk & control environment".** "Control environment" is COSO Component 1 specifically (tone at the top, governance, ethics, structure, competence) — a narrower term of art than the work described, and her audience on this page reads it that way. "Risk and controls" is the deliberate wide umbrella, and it matches the home page tagline word-for-word.
 
-**Sub-tagline removed (Aug 2026).** The second line used to read *"Bridging compliance, finance, and AI — from startup chaos to enterprise scale."* Nikita asked for it to be taken down while she thinks of a replacement — she did not want that particular line on the site in the meantime. The `.contact-tagline-sub` CSS class is still in `styles.css`, so a new line can be dropped straight back into `index.html` when she has one. **Ask her before writing a replacement — this is her personal positioning statement, not ours to invent.**
+**Old sub-tagline removed (Aug 2026).** The second line used to read *"Bridging compliance, finance, and AI — from startup chaos to enterprise scale."* Nikita asked for it to be taken down — she did not want that particular line on the site. `.contact-tagline-sub` now carries the credentials line instead, so there is no longer an empty slot for a positioning statement. **If she wants a strapline back, ask her for the wording — this is her personal positioning statement, not ours to invent.**
 
 ## Timeline Cards (career.html)
 
