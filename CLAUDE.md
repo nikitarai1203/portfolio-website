@@ -158,6 +158,18 @@ Set Aug 2026, replacing *"12+ years across enterprise audit, startups, and profe
 1. **No pronoun linking the two halves.** An earlier draft read *"building frameworks from scratch in startups, then testing **them** at enterprise scale."* "Them" can only refer back to the frameworks she built, which wrongly implies she audited her own work at the same company. In reality she built at Quintype/Clover and audited unrelated control environments at Intel — different companies, different frameworks. "Where none existed" vs "established ones" keeps them as two distinct objects.
 2. **No chronology ("then", "before", "later").** Her actual sequence is build → audit → **build again** (Infleqtion is a first-time SOX implementation). Any word implying a timeline frames the Intel years as the destination and makes her current role sound like the past.
 
+### Career teaser card on the home page (index.html, "Explore" section)
+```
+PROFESSIONAL JOURNEY
+12+ Years, India to the UK
+My career timeline.
+```
+**Both lines were rewritten in Aug 2026, and the card is deliberately the shortest in the "Explore" row.**
+
+*Title.* Was *"12+ Years Across 4 Countries"*. Nikita spotted that the number was indefensible — England and Scotland are one country (the UK), and the Quintype "New York" link is the company's HQ, not a posting of hers (see Key Factual Corrections). The true count is **two: India and the UK**. She chose to **drop the count entirely** rather than lead with the number 2. Do not reintroduce a country count on this card unless she asks for one and names the number herself.
+
+*Description.* Was *"My career timeline — from Chartered Accountancy in India to internal controls leadership in the UK."* An interim edit briefly carried the build/audit differentiator (*"building control frameworks from the ground up, and auditing established ones at enterprise scale"*), but Nikita cut it back to a bare **"My career timeline."** — the title already carries the India → UK arc, and the differentiator is stated in full on the career page she's clicking through to. This is the same instinct as her *"no need to add a tagline for everything"* rule. It reads noticeably sparser than the other four teaser cards; that is her decision, not an oversight. **Do not "balance" the row by padding this line back out.**
+
 **Do NOT rewrite this as "risk & control environment".** "Control environment" is COSO Component 1 specifically (tone at the top, governance, ethics, structure, competence) — a narrower term of art than the work described, and her audience on this page reads it that way. "Risk and controls" is the deliberate wide umbrella, and it matches the home page tagline word-for-word.
 
 **Old sub-tagline removed (Aug 2026).** The second line used to read *"Bridging compliance, finance, and AI — from startup chaos to enterprise scale."* Nikita asked for it to be taken down — she did not want that particular line on the site. `.contact-tagline-sub` now carries the credentials line instead, so there is no longer an empty slot for a positioning statement. **If she wants a strapline back, ask her for the wording — this is her personal positioning statement, not ours to invent.**
@@ -170,7 +182,7 @@ Set Aug 2026, replacing *"12+ years across enterprise audit, startups, and profe
 | 2 | 2022–2026 | Intel Corporation (UK) Ltd | Senior Auditor — Risk & Customer Audit | EMEA & Asia | SOX, ERM, Fraud Prevention, GRC, EMEA & Asia |
 | 3 | 2021–2022 | The University of Edinburgh | MBA | Strategy · Operational Improvement · Finance | MBA, Strategy, Operations, Finance |
 | 4 | 2020–2021 | Clover Ventures Pvt Ltd · Bangalore, India | Finance Manager | Agritech Retail Startup | Team Lead (13), SOX Controls, Fraud Detection & Recovery, Series B |
-| 5 | 2017–2020 | Quintype Technologies · New York / India | Finance Manager | Media-Tech SaaS | SaaS Finance, US GAAP, IFRS, Cost Optimisation |
+| 5 | 2017–2020 | Quintype Technologies · Bangalore, India | Finance Manager | Media-Tech SaaS | SaaS Finance, US GAAP, IFRS, Cost Optimisation |
 | 6 | 2015–2017 | Ranga Rao & Associates (CA) · Bangalore, India | Senior Auditor & Senior Tax Consultant | Multi-Client Practice | US Subsidiaries (4), Indian & US GAAP, Financial Statements, Statutory Filings, AGM Documents, Multi-Client |
 | 7 | 2011–2015 | Multiple Mid-Sized CA Firms · India | Audit Team Lead & Tax Consultant | Audit & Tax Practice | Statutory Audit, Tax Consulting, Bank Audit, Stock Audit, Training Junior Auditors, Internal Audit |
 | 8 | 2008–2012 | Institute of Chartered Accountants of India | Chartered Accountant (CA) | Professional Qualification · 3.5 Years Articleship (Internship) | CA, ICAI, Audit, Taxation |
@@ -212,6 +224,7 @@ Set Aug 2026, replacing *"12+ years across enterprise audit, startups, and profe
 
 ## Key Factual Corrections Applied
 - **Quintype**: No recoveries happened here. Cost reduction (25%) and working capital improvement (15%) were the key financial wins.
+- **Quintype location — she worked for the Indian entity only.** Confirmed by Nikita, Aug 2026. New York is the *company's* headquarters, not a place she was posted. So her career spans **two countries: India and the UK** — full stop. It is fine to describe Quintype as New York-headquartered (startups.html does, correctly), but never put New York in a slot that reads as *her* work location, and never count the US as a country she worked in.
 - **Clover**: Fraud detection and recovery of ₹0.6M (not ₹3.8M as previously shown). The ₹3.8M figure was incorrect.
 - **Intel end date**: Jan 2026 (role made redundant Dec 2025, severance paid through Jan 2026). Website shows 2022–2026.
 - **NDA compliance**: NEVER use specific client/vendor names (e.g. Amazon, specific cloud providers by name) in bar chart labels, descriptions, or anywhere on the site. Nikita is under NDA. Always use generic terms like "Vendor Audit Recovery", "Rebate Overpayment", "Cloud Service Provider" etc. This applies to ALL pages.
