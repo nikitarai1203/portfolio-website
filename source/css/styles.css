@@ -1214,6 +1214,14 @@ body::before {
   font-weight: 500;
 }
 
+.card-description {
+  font-size: 0.82rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  margin-bottom: 0.85rem;
+  max-width: 54ch;
+}
+
 .card-award {
   display: inline-flex;
   align-items: center;

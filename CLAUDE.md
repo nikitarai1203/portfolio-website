@@ -3,7 +3,18 @@
 ## About the Project Owner
 Nikita is **not a technical person** — she has no coding or web development background. She is building and maintaining this website entirely using AI tools. Ask clarifying questions in plain language when in doubt. Never assume technical knowledge. Due to this, ALWAYS update CLAUDE.md with new information as the project updates. Always ask her questions where required.
 
-Nikita is a Senior Auditor & Finance professional (CA + MBA from University of Edinburgh) with 12+ years of experience. Her role at Intel was made redundant in **Dec 2025** and she is currently job hunting, targeting **Internal Audit, Risk & Controls, and Compliance** roles.
+Nikita is a Senior Auditor & Finance professional (CA + MBA from University of Edinburgh) with 12+ years of experience. Her role at Intel was made redundant in **Dec 2025**.
+
+**Current role (as of May 2026): UK SOX & Internal Controls Lead at Infleqtion UK (contract), Oxford.** She is not actively job hunting, but is open to opportunities from **November 2026**. Per her decision, availability is **NOT** shown anywhere on the website — the site simply presents her as working at Infleqtion. Availability signalling is handled privately via LinkedIn's recruiter-only "Open to work" setting.
+
+### Infleqtion — what is safe to publish
+Infleqtion went public on the **NYSE (ticker INFQ) on 17 Feb 2026** via a SPAC merger with Churchill Capital Corp X (~$550M raised). Nikita joined three months later to build first-time SOX/ICFR compliance.
+
+**Because Infleqtion is a listed company, the confidentiality bar is HIGHER than it was for Intel** — she may hold material non-public information (MNPI) about an issuer's financial reporting.
+
+- **Safe:** title, employer, dates, Oxford location, contract status (all public on her LinkedIn); that Infleqtion is a newly NYSE-listed quantum technology company; generic scope of SOX work (risk assessment, scoping, process narratives, RCM design, walkthroughs, control design/documentation, ITGC coordination, entity-level controls, segregation of duties).
+- **NEVER publish:** any material weakness, significant deficiency, or control gap; remediation status or deadlines; ERP/systems or external auditor names; financial figures, forecasts, or unreleased results; named colleagues or team structure; quantified wins ("reduced X by Y%") while the work is live and unaudited.
+- **Rule of thumb:** describe her *scope of responsibility*, never her *findings or status*.
 
 ## GitHub & Deployment
 - **Repo**: https://github.com/nikitarai1203/portfolio-website
@@ -47,7 +58,8 @@ Website- Nikita/
 │   │   ├── clover-deeprooted.png ← Deep Rooted / Clover brand image (314KB, 600×281)
 │   │   ├── quintype-banner.png   ← Quintype Technologies banner (600×315, for startups.html)
 │   │   ├── quintype-q-logo.png   ← Quintype Q logo (400×400, for career.html timeline)
-│   │   └── icai-logo.png         ← ICAI logo, used for CA cards (121KB, 461×338)
+│   │   ├── icai-logo.png         ← ICAI logo, used for CA cards (121KB, 461×338)
+│   │   └── infleqtion-logo.png   ← Infleqtion wordmark (8KB, 768×225) — official brand asset from infleqtion.com
 │   └── CNAME                ← Custom domain config
 └── .claude/
     └── settings.local.json
@@ -139,15 +151,16 @@ Bridging compliance, finance, and AI — from startup chaos to enterprise scale.
 
 | # | Years | Company | Title | Role | Tags |
 |---|---|---|---|---|---|
-| 1 | 2022–2026 | Intel Corporation (UK) Ltd | Senior Auditor — Risk & Customer Audit | EMEA & Asia | SOX, ERM, Fraud Prevention, GRC, EMEA & Asia |
-| 2 | 2021–2022 | The University of Edinburgh | MBA | Strategy · Operational Improvement · Finance | MBA, Strategy, Operations, Finance |
-| 3 | 2020–2021 | Clover Ventures Pvt Ltd · Bangalore, India | Finance Manager | Agritech Retail Startup | Team Lead (13), SOX Controls, Fraud Detection & Recovery, Series B |
-| 4 | 2017–2020 | Quintype Technologies · New York / India | Finance Manager | Media-Tech SaaS | SaaS Finance, US GAAP, IFRS, Cost Optimisation |
-| 5 | 2015–2017 | Ranga Rao & Associates (CA) · Bangalore, India | Senior Auditor & Senior Tax Consultant | Multi-Client Practice | US Subsidiaries (4), Indian & US GAAP, Financial Statements, Statutory Filings, AGM Documents, Multi-Client |
-| 6 | 2011–2015 | Multiple Mid-Sized CA Firms · India | Audit Team Lead & Tax Consultant | Audit & Tax Practice | Statutory Audit, Tax Consulting, Bank Audit, Stock Audit, Training Junior Auditors, Internal Audit |
-| 7 | 2008–2012 | Institute of Chartered Accountants of India | Chartered Accountant (CA) | Professional Qualification · 3.5 Years Articleship (Internship) | CA, ICAI, Audit, Taxation |
+| 1 | 2026–Present | Infleqtion UK · Oxford, United Kingdom | UK SOX & Internal Controls Lead | Quantum Technology · Contract | SOX 404, Internal Controls, ICFR, Process Optimisation, Financial Reporting |
+| 2 | 2022–2026 | Intel Corporation (UK) Ltd | Senior Auditor — Risk & Customer Audit | EMEA & Asia | SOX, ERM, Fraud Prevention, GRC, EMEA & Asia |
+| 3 | 2021–2022 | The University of Edinburgh | MBA | Strategy · Operational Improvement · Finance | MBA, Strategy, Operations, Finance |
+| 4 | 2020–2021 | Clover Ventures Pvt Ltd · Bangalore, India | Finance Manager | Agritech Retail Startup | Team Lead (13), SOX Controls, Fraud Detection & Recovery, Series B |
+| 5 | 2017–2020 | Quintype Technologies · New York / India | Finance Manager | Media-Tech SaaS | SaaS Finance, US GAAP, IFRS, Cost Optimisation |
+| 6 | 2015–2017 | Ranga Rao & Associates (CA) · Bangalore, India | Senior Auditor & Senior Tax Consultant | Multi-Client Practice | US Subsidiaries (4), Indian & US GAAP, Financial Statements, Statutory Filings, AGM Documents, Multi-Client |
+| 7 | 2011–2015 | Multiple Mid-Sized CA Firms · India | Audit Team Lead & Tax Consultant | Audit & Tax Practice | Statutory Audit, Tax Consulting, Bank Audit, Stock Audit, Training Junior Auditors, Internal Audit |
+| 8 | 2008–2012 | Institute of Chartered Accountants of India | Chartered Accountant (CA) | Professional Qualification · 3.5 Years Articleship (Internship) | CA, ICAI, Audit, Taxation |
 
-**Design note:** Timeline cards have NO paragraph descriptions. Quintype Q logo is constrained to `max-width: 120px` inline since it's a square image (400×400) unlike the other rectangular timeline images — only company, title, role, award (Intel only), and tags. This was a deliberate decision to keep them scannable. Each timeline entry has an image in the left column (`.timeline-image`) that reveals on hover (desktop) or shows always (mobile). Images: Intel campus, MBA graduation, Deep Rooted brand, Quintype Q logo, and ICAI logo (shared by Ranga Rao, CA Firms, and CA Qualification cards).
+**Design note:** Timeline cards have NO paragraph descriptions — **except the Infleqtion card**, which carries a short `.card-description` because the role is new and has no quantified results yet. The text is Nikita's own public LinkedIn sentence, used verbatim as an interim placeholder; she intends to approve a fuller write-up later. This is the only card with a description — a deliberate, acknowledged exception. Quintype Q logo is constrained to `max-width: 120px` inline since it's a square image (400×400) unlike the other rectangular timeline images — only company, title, role, award (Intel only), and tags. This was a deliberate decision to keep them scannable. Each timeline entry has an image in the left column (`.timeline-image`) that reveals on hover (desktop) or shows always (mobile). Images: Intel campus, MBA graduation, Deep Rooted brand, Quintype Q logo, and ICAI logo (shared by Ranga Rao, CA Firms, and CA Qualification cards).
 
 ## Intel UK (intel.html)
 - **Page header**: Intel campus photo in top-right corner (200×130px) via `.intel-header-row` and `.intel-header-photo`
@@ -206,6 +219,7 @@ Bridging compliance, finance, and AI — from startup chaos to enterprise scale.
 | Timeline dot | `.timeline-dot` | 10px with halo effect on `.visible` |
 | Card | `.card` | Has left accent bar on hover |
 | Timeline image | `.timeline-image` | Hover-reveal image in timeline left column, contain fit, hidden by default on desktop |
+| Card description | `.card-description` | Short paragraph on a timeline card. Used ONLY on the Infleqtion card (see Design note) |
 | Section heading | `.section-heading` | DM Sans, 1.6rem |
 | AI project cards | `.ai-project-card` | 3-column grid (1-col on mobile) |
 | Tags | `.tag` | Small pills, slate blue |
