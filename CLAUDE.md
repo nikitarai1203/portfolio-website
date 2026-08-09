@@ -146,6 +146,14 @@ Nikita Rai
 Internal Audit · SOX Implementation · Risk & Controls · Compliance | MBA (Edinburgh) · CA · 12+ Years
 ```
 
+### Career page subtitle (career.html)
+```
+12+ years on both sides of risk and controls — building frameworks from scratch in startups, then testing them at enterprise scale.
+```
+Set Aug 2026, replacing *"12+ years across enterprise audit, startups, and professional practice — spanning India and the UK."* The old line only listed **where** she worked; this one states the differentiator — she has both **built** control frameworks (Quintype books from scratch, Clover controls, Infleqtion first-time SOX) and **audited** them at enterprise scale (Intel). Most auditors have only ever done the testing half.
+
+**Do NOT rewrite this as "risk & control environment".** "Control environment" is COSO Component 1 specifically (tone at the top, governance, ethics, structure, competence) — a narrower term of art than the work described, and her audience on this page reads it that way. "Risk and controls" is the deliberate wide umbrella, and it matches the home page tagline word-for-word.
+
 **Sub-tagline removed (Aug 2026).** The second line used to read *"Bridging compliance, finance, and AI — from startup chaos to enterprise scale."* Nikita asked for it to be taken down while she thinks of a replacement — she did not want that particular line on the site in the meantime. The `.contact-tagline-sub` CSS class is still in `styles.css`, so a new line can be dropped straight back into `index.html` when she has one. **Ask her before writing a replacement — this is her personal positioning statement, not ours to invent.**
 
 ## Timeline Cards (career.html)
